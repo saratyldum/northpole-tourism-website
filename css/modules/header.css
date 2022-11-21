@@ -1,17 +1,31 @@
-
 .navigation {
 	display: flex;
 	height: 3em;
 	position: relative;
 	justify-content: space-between;
-	position: absolute;
-	width: 90%;
-	left: 5%;
-	top: 2%;
+	/* position: absolute; */
+	width: 85vw;
+	margin: 1em auto;
+	/* top: 1.5em; */
 } 
 
+
+
+
+
+.navigation__hamburger-button {
+	height: 2em;
+	/* position: absolute;
+	top: 1em;
+	right: 5%; */
+}
+
+.logo {
+	width: 3em;
+}
+
 .navigation__close-button {
-	/* display: none; */
+	display: none;
 	z-index: 4;
 	background-color: var(--red);
 }
@@ -66,8 +80,4 @@
 .showMenu {
 	transform: translateY(0);
 }
-
-.hamburger {
-	position: absolute;
-	right: 2em;
 } */
