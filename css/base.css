@@ -1,0 +1,45 @@
+body {
+	font-size: 16px;
+	background-color: #f5f5f5;
+	color: var(--green);
+	font-family: 'Barlow', sans-serif;
+	letter-spacing: 1px;
+}
+
+section {
+	padding: 2em;
+	height: 100vh;
+	position: relative;
+}
+
+h2 {
+	font-family: 'Bellefair', serif;
+	color: var(--green);
+	font-size: 3.5em;
+	text-transform: uppercase;
+	padding: 0.5em 1em;
+	text-align: center;
+}
+
+h3 {
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 5px;
+	font-family: 'Barlow', sans-serif;
+}
+
+p {
+	text-transform: initial;
+	text-align: center;
+	line-height: 2em;
+}
+
+
+h2, h3, img, p {
+	position: relative;
+	z-index: 1;
+}
+
+.heading--red {
+	color: var(--red);
+}

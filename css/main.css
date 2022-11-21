@@ -1,8 +1,8 @@
-* {
-	
-}
+@import './reset.css';
+@import './variables.css';
+@import './base.css';
+@import './fonts.css';
 
-img {
-	width: 100%;
-	height: 100%;
-}
+@import './modules/header.css';
+@import './modules/hero.css';
+@import './modules/slideshow__places.css';
