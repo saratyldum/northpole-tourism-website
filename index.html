@@ -10,6 +10,116 @@
 </head>
 
 <body>
-	
+	<header>
+		<a href="#home"><img src="./assets/logo.svg" alt="Home"></a>
+		<nav>
+			<button class="navigation__hamburger-button">
+				<img src="./assets/hamburger.svg" alt="Open Menu">
+			</button>
+
+			<button class="navigation__close-button">
+				<img src="./assets/closeIcon.svg" alt="Close Menu">
+			</button>
+
+			<ul class="navigation__menu">
+				<li>
+					<a href="#home" class="navigation__menu--link"><span class="navigation__menu--number">00</span>Home</a></li>
+					<li>
+						<a href="#places" class="navigation__menu--link"><span class="navigation__menu--number">01</span> Places</a></li>
+					<li>
+						<a href="#crew" class="navigation__menu--link"><span class="navigation__menu--number">02</span> Crew</a></li>
+					<li>
+						<a href="#inquires" class="navigation__menu--link"><span class="navigation__menu--number">03</span> Inquiries</a></li>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero" id="home">
+			<h3>So, you want to travel to</h3>
+			<h1><span class="hero__span--the">The</span> North Pole</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ipsa dolor nesciunt corrupti distinctio quos quidem aperiam qui animi dolorum. Quaerat, sed? Incidunt unde veritatis cum facere mollitia eveniet dignissimos quia vero? Animi beatae quisquam optio eaque labore vel aut!</p>
+			<button class="hero__explore-button">Explore</button>
+		</section>
+
+		<section class="slideshow" id="places">
+			<h3><span class="heading--red">01 </span>Pick your destination</h3>
+			<div class="slideshow__infos">
+				<div class="slideshow__info slideshow__info--santas-house slideshow__info--active">
+					<h2>Santas House</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero non consectetur sint quasi repellat est, earum in error deserunt tenetur porro facere expedita, consequuntur optio ea dicta corrupti? Repellat neque veniam recusandae doloremque delectus excepturi eum sed iste ut at!</p>
+				</div>
+
+				<div class="slideshow__info slideshow__info--toy-factory">
+					<h2>Toy factory</h2>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum animi nihil blanditiis voluptatum quo ex vero, amet dicta, assumenda atque repudiandae eligendi veniam molestiae minus magnam adipisci fuga minima eum labore eius ratione maiores, provident enim libero. Sapiente, nihil labore!</p>
+				</div>
+
+				<div class="slideshow__info slideshow__info--reindeer-barn">
+					<h2>Reindeer barn</h2>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor labore tempore nesciunt, praesentium facere adipisci quaerat ducimus? Qui temporibus sequi nam ratione molestias eius deleniti alias laborum minus, inventore obcaecati aperiam error laboriosam porro nobis fuga deserunt beatae consectetur at.</p>
+				</div>
+
+				<div class="slideshow__info slideshow__info--candy-factory">
+					<h2>Candy factory</h2>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque veritatis quisquam laboriosam quam, iure magni suscipit ullam maiores, placeat iusto totam aspernatur architecto temporibus, dolor sint officia! Minus officia unde, labore iure, odio cum, consequuntur animi sapiente explicabo quibusdam iste.</p>
+				</div>
+			</div>
+
+			<div class="slideshow__buttons">
+				<button class="slideshow__button">Santa</button>
+				<button class="slideshow__button">Toys</button>
+				<button class="slideshow__button">Barn</button>
+				<button class="slideshow__button">Candy</button>
+			</div>
+
+			<div class="slideshow__images">
+				<img src="./assets/santasHouse.png" alt="Santas house" class="slideshow__image slideshow__image--active slideshow__image--santa">
+				<img src="./assets/toyFactory.png" alt="Toy factory" class="slideshow__image tab__image--toys" >
+				<img src="./assets/reindeers.png" alt="Three reindeers" class="slideshow__image slideshow__image--reindeers">
+				<img src="./assets/candy.png" alt="Candy sock" class="slideshow__image slideshow__image--candy">
+			</div>
+		</section>
+
+		<section class="slideshow" id="crew">
+			<h3><span class="heading--red">02 </span>Meet the Crew</h3>
+			<div class="slideshow__infos">
+				<div class="slideshow__info slideshow__info--santa slideshow__info--active">
+					<h2>Santa Claus</h2>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae ducimus, similique autem asperiores nostrum illum, soluta molestiae placeat perferendis consectetur, sit unde perspiciatis saepe. Tempora totam ipsam, beatae ipsa tempore magni aut cum ex minus?</p>
+				</div>
+
+				<div class="slideshow__info slideshow__info--mrs-claus">
+					<h2>Mrs. Claus</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam fuga esse sunt eaque dolor nostrum. Ab deleniti id deserunt veritatis voluptatem quisquam ullam cupiditate iusto obcaecati? Enim tempore numquam quo minima dolores ab eligendi perspiciatis!</p>
+				</div>
+
+				<div class="slideshow__info slideshow__info--rudolf">
+					<h2>Rudolf</h2>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, eveniet voluptatem! Tenetur fuga et nobis tempore officia, repudiandae repellendus numquam id, rerum ratione aspernatur quia deleniti blanditiis alias placeat cum accusantium quo distinctio quasi dolor!</p>
+				</div>
+
+				<div class="slideshow__info slideshow__info--elf">
+					<h2>Simon the Elf</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, culpa sit odio, ab, neque sequi autem officia eius esse ipsa accusantium eaque. Maxime quidem sed hic veniam, ullam ratione qui omnis eaque voluptas asperiores fuga.</p>
+				</div>
+			</div>
+
+			<div class="slideshow__dots">
+				<button class="slideshow__dot"></button>
+				<button class="slideshow__dot"></button>
+				<button class="slideshow__dot"></button>
+				<button class="slideshow__dot"></button>
+			</div>
+
+			<div class="slideshow__images">
+				<img src="./assets/santaClaus.png" alt="Santa Claus" class="slideshow__image slideshow__image--santa slideshow__image--active">
+				<img src="./assets/mrsClaus.png" alt="Mrs. Claus" class="slideshow__image--mrs-claus slideshow__image">
+				<img src="./assets/rudolf.png" alt="Rudolf the Reindeer" class="slideshow__image slideshow__image--rudolf">
+				<img src="./assets/elf.png" alt="Elf" class="slideshow__image slideshow__image--elf">
+			</div>
+		</section> 
+	</main>
 </body>
 </html>
