@@ -10,6 +10,12 @@
 
 .navigation__hamburger-button {
 	height: 2em;
+	transition: transform 0.2s ease-in;
+
+}
+
+.navigation__hamburger-button:hover {
+	transform: rotate(90deg);
 }
 
 .logo {
