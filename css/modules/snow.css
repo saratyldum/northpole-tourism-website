@@ -1,0 +1,35 @@
+:root {
+	--left-start: 0;
+	--left-end: 0;
+	--y-start: 0;
+}
+
+.snow {
+	background-image: url(../../assets/images/snowflake.png);
+	filter: saturate(100%);
+	background-size: cover;
+	position: absolute;
+	left: 0; 
+	width: 20px;
+	height: 20px;
+	top: 0;
+	z-index: 10;
+	animation: snowfall 10s linear infinite;
+	animation-delay: 10s;
+	transform: rotate(360deg);
+	pointer-events: none;
+	z-index: 999;
+}
+
+@keyframes snowfall {
+	0% {
+		transform: translate3d(var(--left-start), var(--y-start), 0);
+		/* endre første null til random vw såde beveger seg sidelengs */
+		/* endre 0 2 til 		let y = window.innerHeight;
+ */
+	}
+	100% {
+		transform: translate3d(var(--left-end), 310vh, 0);
+		/* endre første null til random vw såde beveger seg sidelengs */
+	}
+}
