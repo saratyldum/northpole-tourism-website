@@ -2,8 +2,9 @@ export default function Slideshow() {
 	let currentInfoSlideIndex = 0;
 	let currentImageIndex = 0;
 
-	const slideshow = document.querySelector('.slideshow');
+	const slideshow = document.querySelectorAll('.slideshow');
 	const buttons = document.querySelectorAll('.slideshow__button');
+	const dots = document.querySelectorAll('.slideshow__dot');
 	const infoText = document.querySelectorAll('.slideshow__info');
 	const images = document.querySelectorAll('.slideshow__image');
 
@@ -14,6 +15,12 @@ export default function Slideshow() {
 		});
 	};
 
+	for (let index = 0; index < dots.length; index +=1) {
+		dots[index].addEventListener('click', event => {
+			handleDotsClick(event, index)
+		});
+	};
+
 
 
 	function handleButtonsClick(event, index) {
@@ -21,11 +28,16 @@ export default function Slideshow() {
 		renderHTML();
 	}
 
+	function handleDotsClick(event, index) {
+		changeCurrentIndex(index);
+		renderHTML();
+	}
+
 	function changeCurrentIndex(index) {
 		currentInfoSlideIndex = index;
 		currentImageIndex = index;
-
 	}
+
 
 
 	function renderHTML() {

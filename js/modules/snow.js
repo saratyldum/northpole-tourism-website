@@ -8,14 +8,14 @@ export default function Snow() {
 	function handleButtonClick() {
 	  addSnow();
   
-	  setInterval(() => {
+	  const snowfall = setInterval(() => {
 		  for (let index = 1; index < 10; index++) {
-			  addSnow();
+			
+			addSnow();
 		  }
 	  }, 3000);
-  
-	  // setTimeout(() => {
-	  // }, 500)
+
+	  setTimeout(function() {clearInterval(snowfall); }, 7000)
 	}
   
   

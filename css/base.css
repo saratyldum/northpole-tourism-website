@@ -15,7 +15,7 @@ section {
 h2 {
 	font-family: 'Bellefair', serif;
 	color: var(--green);
-	font-size: 3.5em;
+	font-size: 3em;
 	text-transform: uppercase;
 	padding: 0.5em 1em;
 	text-align: center;
@@ -35,7 +35,12 @@ p {
 }
 
 
-h2, h3, img, p {
+h2, h3, p {
+	position: relative;
+	z-index: 3;
+}
+
+img {
 	position: relative;
 	z-index: 1;
 }

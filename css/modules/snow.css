@@ -5,7 +5,7 @@
 }
 
 .snow {
-	background-image: url(../../assets/images/snowflake.png);
+	background-image: url(../../assets/images/snowflaketest.png);
 	filter: saturate(100%);
 	background-size: cover;
 	position: absolute;
@@ -13,12 +13,12 @@
 	width: 20px;
 	height: 20px;
 	top: 0;
-	z-index: 10;
+	z-index: 2;
 	animation: snowfall 10s linear infinite;
 	animation-delay: 10s;
 	transform: rotate(360deg);
 	pointer-events: none;
-	z-index: 999;
+	/* z-index: 999; */
 }
 
 @keyframes snowfall {
