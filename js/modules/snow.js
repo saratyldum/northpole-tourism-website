@@ -15,7 +15,7 @@ export default function Snow() {
 		  }
 	  }, 3000);
 
-	  setTimeout(function() {clearInterval(snowfall); }, 7000)
+	  setTimeout(function() {clearInterval(snowfall); }, 10000)
 	}
   
   
