@@ -1,27 +1,37 @@
 export default function Header() {
-	const menu = document.querySelector('.navigation__menu');
-	const menuItems = document.querySelectorAll('.navigation__menu--link');
-	const hamburgerIcon = document.querySelector('.navigation__hamburger-button');
-	const closeIcon = document.querySelector('.navigation__close-button');
+	const headerVisibleThreshold = 200;
 
-	hamburgerIcon.addEventListener('click', toggleMenu);
-	closeIcon.addEventListener('click', toggleMenu)
+	let currentScrollDirection = null;
+	let previousScrollPosition = 0;
+	
+	const navigation = document.querySelector('.navigation');
+	const logo = document.querySelector('.logo');
 
-	function toggleMenu() {;
-		if (menu.classList.contains('showMenu')) {
-			menu.classList.remove('showMenu');
-			closeIcon.style.display = 'none';
-		}else {
-			menu.classList.add('showMenu');
-			closeIcon.style.display = 'block'
-		}
+	if (navigation !== null) {
+		window.addEventListener('scroll', handleWindowScroll);
 	}
 
-	for (let index = 0; index < menuItems.length; index +=1) {
-		menuItems[index].addEventListener('click', toggleMenu);
-	};
+	function handleWindowScroll(event) {
+		toggleNavigationVisibility();
+	}
 
-	/**
-	 * add scroll up show navigation
-	 */
+
+	function toggleNavigationVisibility() {
+		const scrollY = window.scrollY;
+		let yPos = window.pageYOffset + 16;
+
+		if (scrollY > previousScrollPosition) {
+			currentScrollDirection = 'down';
+		} else {
+			currentScrollDirection = 'up';
+		}
+
+		if (currentScrollDirection === 'down' && scrollY >= headerVisibleThreshold) {
+			navigation.style.top = 0 + 'px'
+		} else {
+			navigation.style.top = yPos + 'px';
+		}
+		previousScrollPosition = scrollY;
+	}
+
 }
