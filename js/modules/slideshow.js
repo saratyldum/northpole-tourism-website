@@ -29,10 +29,14 @@ export default function Slideshow() {
 	}
 
 	function handleDotsClick(event, index) {
-		changeCurrentIndex(index);
+		changeCurrentIndexDots(index);
 		renderHTML();
 	}
 
+	function changeCurrentIndexDots(index) {
+		currentInfoSlideIndex = index + 4;
+		currentImageIndex = index + 4;
+	}
 	function changeCurrentIndex(index) {
 		currentInfoSlideIndex = index;
 		currentImageIndex = index;
@@ -50,6 +54,11 @@ export default function Slideshow() {
 		}
 
 		infoText[currentInfoSlideIndex].scrollIntoView({
+			behaviour: 'smooth',
+			inline: 'center'
+		});
+
+		images[currentImageIndex].scrollIntoView({
 			behaviour: 'smooth',
 			inline: 'center'
 		});
