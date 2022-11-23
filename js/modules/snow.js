@@ -2,7 +2,7 @@ export default function Snow() {
 	const button = document.querySelector('.hero__explore-button');
 	const body = document.querySelector('body');
   
-	if ( butt !== null) {
+	if ( button !== null) {
 		button.addEventListener('click', handleButtonClick);
 	}
   
