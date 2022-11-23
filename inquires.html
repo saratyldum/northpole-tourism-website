@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Northpole</title>
+
+	<link rel="stylesheet" href="./css/main.css">
+	<script type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav class="navigation">
+			<a href="index.html#home"><img src="./assets/images/logo.svg" alt="Home" class="logo"></a>
+			<button class="navigation__hamburger-button">
+				<img src="./assets/images/hamburger.svg" alt="Open Menu">
+			</button>
+
+			<button class="navigation__close-button">
+				<img src="./assets/images/closeIcon.svg" alt="Close Menu">
+			</button>
+
+			<ul class="navigation__menu">
+				<li class="navigation__menu--item">
+					<a href="index.html#home" class="navigation__menu--link"><span class="navigation__menu--number">00</span>Home</a>
+				</li>
+				<li class="navigation__menu--item">
+					<a href="index.html#places" class="navigation__menu--link"><span class="navigation__menu--number">01</span> Places</a>
+				</li>
+				<li class="navigation__menu--item">
+					<a href="index.html#crew" class="navigation__menu--link"><span class="navigation__menu--number">02</span> Crew</a>
+				</li>
+				<li class="navigation__menu--item">
+					<a href="inquires.html#inquires" class="navigation__menu--link"><span class="navigation__menu--number">03</span> Inquiries</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="wishlist" id="inquires">
+			<form class="wishlist__form">
+				<p class="alert"></p>
+				<h3>Wishlist</h3>
+				<div class="form-control">
+					<input type="text" id="wishlist" placeholder="e.g. lego">
+					<button type="submit" class="wishlist__button--submit">Add wish</button>
+				</div>
+			</form>
+			
+			<div class="wishlist__container">
+				<div class="wishlist__list">
+					<!-- HER SKAL ITEMS:
+						
+					<p class="title">ITEM</p>
+					<div class="wishlist__button-container">
+						<button class="wishlist__button--edit">
+							<img src="./assets/edit.svg" class="wishlist__button--edit-img">
+						</button>
+						<button class="wishlist__button--delete">
+							<img src="./assets/trash.svg" class="wishlist__button--trash-img">
+						</button>
+						</div> -->
+				</div>
+				<button type="button" class="wishlist__button--clear">Clear items</button>
+				<button type="button" class="wishlist__button--send">Send Wishlist</button>
+
+			</div>
+			</section>
+	</main>
+</body>
+</html>
