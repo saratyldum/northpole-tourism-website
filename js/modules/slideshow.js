@@ -8,19 +8,19 @@ export default function Slideshow() {
 	const infoText = document.querySelectorAll('.slideshow__info');
 	const images = document.querySelectorAll('.slideshow__image');
 
+	if (slideshow !== null) {
+		for (let index = 0; index < buttons.length; index +=1) {
+			buttons[index].addEventListener('click', event => {
+				handleButtonsClick(event, index)
+			});
+		};
 
-	for (let index = 0; index < buttons.length; index +=1) {
-		buttons[index].addEventListener('click', event => {
-			handleButtonsClick(event, index)
-		});
-	};
-
-	for (let index = 0; index < dots.length; index +=1) {
-		dots[index].addEventListener('click', event => {
-			handleDotsClick(event, index)
-		});
-	};
-
+		for (let index = 0; index < dots.length; index +=1) {
+			dots[index].addEventListener('click', event => {
+				handleDotsClick(event, index)
+			});
+		};
+	}
 
 
 	function handleButtonsClick(event, index) {

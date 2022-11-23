@@ -5,7 +5,9 @@ export default function Explore() {
 	
 	const exploreButton = document.querySelector('.hero__explore-button');
 
-	exploreButton.addEventListener('click', handleExploreButtonClick);
+	if (exploreButton !== null) {
+		exploreButton.addEventListener('click', handleExploreButtonClick);
+	}
 
 	function handleExploreButtonClick(event) {
 		let y = window.innerHeight;
