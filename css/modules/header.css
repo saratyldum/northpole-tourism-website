@@ -6,6 +6,7 @@
 	width: 85vw;
 	left: 7.5vw;
 	top: 1.5em;
+	z-index: 4;
 } 
 
 .navigation__hamburger-button {
