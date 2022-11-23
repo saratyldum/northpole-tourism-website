@@ -16,6 +16,7 @@
 	display: flex;
 	overflow: hidden;
 	margin: 1em auto 1em auto;
+	min-height: 40vh;
 }
 
 #places .slideshow__info {
@@ -50,6 +51,7 @@
 	justify-content: center;
 	gap: 1em;
 	position: relative;
+	transition: 0.7s ease-in-out;
 }
 
 #places .slideshow__button {
@@ -89,4 +91,3 @@
 	position: absolute;
 	bottom: 0;
 }
-

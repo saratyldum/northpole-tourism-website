@@ -15,13 +15,14 @@
 	display: flex;
 	overflow: hidden;
 	margin: 1em auto;
+	min-height: 50vh;
 }
 
 
 
 #crew .slideshow__info {
 	display: none;
-	z-index: 3;
+	z-index: 5;
 }
 
 #crew .slideshow__info--active {
@@ -52,6 +53,7 @@
 	justify-content: center;
 	gap: 1em;
 	position: relative;
+	transition: 0.7s ease-in-out;
 }
 
 #crew .slideshow__dot {

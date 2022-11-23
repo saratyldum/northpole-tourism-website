@@ -35,7 +35,7 @@ p {
 }
 
 
-h2, h3, p {
+h1, h2, h3, p, button {
 	position: relative;
 	z-index: 3;
 }
@@ -47,10 +47,5 @@ img {
 
 .heading--red {
 	color: var(--red);
-}
-
-h1, h3, p, button {
-	position: relative;
-	z-index: 2;
 }
 
