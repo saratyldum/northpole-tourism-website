@@ -1,3 +1,11 @@
+#places h3 {
+	font-size: 0.9em;
+}
+
+#places h2 {
+	font-size: 3em;
+}
+
 #places::before {
 	content: '';
 	background-image: url(../../assets/images/backgroundPlaces.jpg);
@@ -90,4 +98,23 @@
 	background-color: var(--green);
 	position: absolute;
 	bottom: 0;
+}
+
+.slideshow__image--santa {
+	position: absolute;
+	bottom: 10px;
+	right: 0;
+}
+
+.tab__image--toys {
+	position: absolute;
+	bottom: 10px;
+	right: 0;
+
+}
+
+.slideshow__image--reindeers {
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }

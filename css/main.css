@@ -5,8 +5,10 @@
 
 @import './modules/header.css';
 @import './modules/hero.css';
+@import './modules/popup.css';
 @import './modules/snow.css';
 @import './modules/slideshow__places.css';
 @import './modules/slideshow__crew.css';
 @import './modules/wishlist.css';
+@import './modules/light-bulbs.css';
 

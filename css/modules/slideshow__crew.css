@@ -1,3 +1,11 @@
+#crew h3 {
+	font-size: 1em;
+}
+
+#crew h2 {
+	font-size: 3em;
+}
+
 #crew::before {
 	content: '';
 	background-image: url(../../assets/images/backgroundCrew.jpg);		
@@ -15,7 +23,6 @@
 	display: flex;
 	overflow: hidden;
 	margin: 1em auto;
-	min-height: 50vh;
 }
 
 
@@ -23,6 +30,8 @@
 #crew .slideshow__info {
 	display: none;
 	z-index: 5;
+	min-height: 40vh;
+
 }
 
 #crew .slideshow__info--active {
@@ -43,7 +52,7 @@
 #crew .slideshow__image--active {
 	display: block;
 	object-fit: contain;
-	height: 35vh;
+	height: 40vh;
 	margin-top: 1em;
 }
 
@@ -51,6 +60,7 @@
  #crew .slideshow__dots {
 	display: flex;
 	justify-content: center;
+	margin: 1em;
 	gap: 1em;
 	position: relative;
 	transition: 0.7s ease-in-out;
@@ -72,3 +82,21 @@
 #crew .slideshow__dot:hover {
 	opacity: 0.7;
 }   
+
+.slideshow__image--santa {
+	position: absolute;
+	bottom: 2em;
+}
+.slideshow__image--mrs-claus {
+	position: absolute;
+	bottom: 2em;
+	left: 0;
+	transform: scale(1.2);
+
+}
+
+.slideshow__image--elf {
+	position: absolute;
+	transform: scale(0.9);
+	left: 0;
+}
