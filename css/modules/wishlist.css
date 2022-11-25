@@ -1,18 +1,30 @@
+/* .inquires {
+	background: url(../../assets/images/backgroundWishlist.svg);
+} */
+
 #inquires {
-	background-color: rgb(179, 58, 58);
-	color: #f5f5f5;
+	color: var(--green);
+	background-color: var(--white);
+	font-family: 'Corinthia', cursive;
 	width: 60vw;
-	height: 60vh;
-	border: 1px solid red;
-	border-radius: 0.2em;
+	height: 70vh;
+	border-width: 5px;
+	border-style: solid;
+	border-image: repeating-linear-gradient(-45deg,
+	var(--red),
+	var(--red) 12px,
+	transparent 10px,
+	transparent 23px) 2;
 	margin: 9em auto;
 	text-align: center;
-	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+	box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+	z-index: 2;
+	position: relative;
 }
 
 .alert {
 	margin-bottom: 1em;
-	height: 1.5em;
+	height: 2em;
 	display: grid;
 	align-items: center;
 	text-align: center;
@@ -32,11 +44,11 @@
 
 .wishlist__form h3 {
 	text-align: center;
-	margin: 0.5em;
+	margin-bottom: 0.2em;
 	text-transform: capitalize;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Corinthia', cursive;
 	font-weight: lighter;
-	font-size: 2em;
+	font-size: 3em;
 }
 
 .form-control {
@@ -50,9 +62,10 @@
 	padding-left: 1em;
 	margin-left: 0.3em;
 	background-color: lightgray;
-	border-color: transparent;
-	font-size: 1em;
+	border: 1px solid var(--red);
+	font-size: 0.8em;
 	flex: 1 0 auto;
+	font-family: cursive;
 }
 
 #wishlist::placeholder {
@@ -61,19 +74,22 @@
 
 .wishlist__button--submit {
 	background-color: #f5f5f5;
-	border-color: transparent;
+	border: 1px solid var(--red);
 	flex: 0 0 5em;
 	display: grid;
 	padding: 0.2em;
 	text-transform: capitalize;
 	letter-spacing: 2px;
+	align-self: center;
+	font-family: cursive;
+	font-size: 0.6em;
+	box-shadow: inset 4px, 4px red;
+
 }
 
 .wishlist__button--edit, .wishlist__button--delete {
 	width: 20px;
 	height: 20px;
-	background-color: rgb(179, 58, 58);
-
 }
 
 .wishlist__container {
