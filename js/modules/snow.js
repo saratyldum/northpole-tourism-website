@@ -1,24 +1,37 @@
 export default function Snow() {
+	let checked = false;
+
 	const button = document.querySelector('.hero__explore-button');
 	const body = document.querySelector('body');
+	const checkBox = document.querySelector('.toggle-snow__checkbox')
+	const checkBoxDiv = document.querySelector('.toggle-snow')
   
 	if ( button !== null) {
 		button.addEventListener('click', handleButtonClick);
+		checkBox.addEventListener('click', handleCheckBoxClick)
+
 	}
   
 	function handleButtonClick() {
-	  addSnow();
-  
-	  const snowfall = setInterval(() => {
-		  for (let index = 1; index < 10; index++) {
-			
-			addSnow();
-		  }
-	  }, 3000);
-
-	  setTimeout(function() {clearInterval(snowfall); }, 10000)
+	  addSnowfall();
+	  toggleSnow();
 	}
-  
+
+	function handleCheckBoxClick() {
+		toggleSnow();
+	}
+
+	function addSnowfall() {
+		addSnow();
+		const snowfall = setInterval(() => {
+			for (let index = 1; index < 10; index++) {
+			 
+			 addSnow();
+			}
+		}, 3000);
+ 
+		setTimeout(function() {clearInterval(snowfall); }, 10000)
+	}
   
 	function addSnow(event) {
 	  const snow = document.createElement('div');
@@ -26,14 +39,20 @@ export default function Snow() {
   
 	  const screenWidth = window.innerWidth;
   
-	  const size = Math.floor(Math.random() * 20);
+	  const size = Math.floor(Math.random() * 17);
 	  const left = Math.random()* screenWidth;
+	  const leftEnd = Math.random()*150;
+	  const leftStart = Math.random()*50;
 	  const delay = Math.random()*5;
 
 	  let y = window.innerHeight;
 
   
 	  document.documentElement.style.setProperty('--y-start', y + 'px');
+	//   document.documentElement.style.setProperty('--left-start', leftStart + 'px');
+	  document.documentElement.style.setProperty('--left-end', leftEnd + 'px');
+
+
   
 	  
 	  snow.style.width = size + 'px';
@@ -43,4 +62,21 @@ export default function Snow() {
   
 	  body.appendChild(snow);
 	}
+
+	function toggleSnow() {
+		checked = !checked;
+		checkBox.checked = true;
+		checkBoxDiv.style.display = 'block'
+
+		if(checked === false) {
+			const snowfall = document.querySelectorAll('.snow');
+			snowfall.forEach(snow => {
+				snow.remove();
+			})
+			checkBox.checked = false;
+			clearInterval(snowfall)
+		} else {
+			addSnowfall();
+		}
+}
 }
