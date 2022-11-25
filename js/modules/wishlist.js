@@ -11,10 +11,12 @@ export default function Wishlist() {
 	const clearButton = document.querySelector('.wishlist__button--clear');
 	const sendButton = document.querySelector('.wishlist__button--send');
 	const editButton = document.querySelector('.wishlist__button--edit');
+	const modal = document.querySelector('.wishlist__modal');
 
 	if ( wishlist !== null) {
 		form.addEventListener('submit', handleFormSubmit);
 		clearButton.addEventListener('click', handleClearButtonClick);
+		sendButton.addEventListener('click', handleSendButtonClick);
 	}
 
 
@@ -28,7 +30,12 @@ export default function Wishlist() {
 		clearItems();
 		displayAlert('wishlist is empty', 'danger');
 		setBackToDefault();
+	}
 
+	function handleSendButtonClick() {
+		clearItems();
+		setBackToDefault();
+		openModal();
 	}
 
 	function addItem(event) {
@@ -112,7 +119,12 @@ export default function Wishlist() {
 		submitButton.textContent = 'Edit Item'
 		isEditing = true;
 	}
+
+	function openModal() {
+		modal.showModal()
+	}
 	
+
 	function setBackToDefault() {
 		wishlist.value = '';
 		submitButton.textContent = 'Add Wish';
