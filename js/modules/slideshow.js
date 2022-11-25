@@ -47,10 +47,12 @@ export default function Slideshow() {
 	function renderHTML() {
 		for (const infoSlide of infoText) {
 			infoSlide.classList.remove('slideshow__info--active');
+
 		}
 
 		for (const image of images) {
 			image.classList.remove('slideshow__image--active');
+
 		}
 
 		infoText[currentInfoSlideIndex].scrollIntoView({
