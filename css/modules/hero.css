@@ -54,3 +54,17 @@
 	padding: 2em 1em;
 	border: 30px solid rgba(245, 245, 245, 0.6)
 }
+
+@media screen and (min-width: 768px) {
+	.hero {
+		padding: 8em 8em
+	}
+
+	.hero::before {
+		background-position: left;
+	}
+
+	.hero h1 {
+		font-size: 4em;
+	}
+}

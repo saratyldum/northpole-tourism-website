@@ -100,3 +100,28 @@
 	transform: scale(0.9);
 	left: 0;
 }
+
+@media screen and (min-width: 768px) {
+	#crew h3 {
+		text-align: left;
+	}
+
+	#crew h2 {
+		font-size: 3.9em;
+	}
+
+	#crew p {
+		padding: 0 6em;
+	}
+
+	#crew {
+		padding: 3em 4em;
+	}
+
+	#crew .slideshow__info {
+		min-height: 35vh;
+	}
+
+	#crew .slideshow__image--active {
+		height: 45vh;
+}

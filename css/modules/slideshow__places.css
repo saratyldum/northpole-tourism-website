@@ -118,3 +118,21 @@
 	bottom: 0;
 	right: 0;
 }
+
+@media screen and (min-width: 768px) {
+	#places h3 {
+		text-align: left;
+	}
+
+	#places h2 {
+		font-size: 3.9em;
+	}
+
+	#places p {
+		padding: 0 6em;
+	}
+
+	#places {
+		padding: 3em 4em;
+	}
+}
