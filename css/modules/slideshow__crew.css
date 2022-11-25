@@ -8,7 +8,7 @@
 
 #crew::before {
 	content: '';
-	background-image: url(../../assets/images/backgroundCrew.jpg);		
+	background-image: url(../../assets/images/backgroundPlaces.jpg);		
 	background-size: cover;
 	opacity: 0.3;
 	position: absolute;
@@ -101,6 +101,7 @@
 	left: 0;
 }
 
+
 @media screen and (min-width: 768px) {
 	#crew h3 {
 		text-align: left;
@@ -124,4 +125,56 @@
 
 	#crew .slideshow__image--active {
 		height: 45vh;
+}
+
+@media screen and (min-width: 992px) {
+	#crew {
+		display: flex;
+	}
+
+	#crew h2, #crew p {
+		text-align: left;
+		padding: 0.5em 0 0 0;
+	}
+
+	#crew h2 {
+		font-size: 3.5em;
+	}
+
+	#crew h3 {
+		padding-top: 8em;
+		font-size: 1.2em;
+	}
+
+
+	#crew .slideshow__infos {
+		max-width: 40vw;
+	}
+
+	#crew .slideshow__dots {
+		justify-content: flex-start;
+		margin-left: 0;
+		gap: 1.5em;
+	}
+
+	#crew .slideshow__image--active {
+		height: 70vh;
+		right: 0;
+		display: inline;
+		width: 50vw;
+	}
+
+	.slideshow__image--mrs-claus {
+		left: 50%;
+	}
+
+	.slideshow__image--rudolf {
+		bottom: -8em;
+	}
+
+	.slideshow__image--elf {
+		transform: translateX(100%) scale(0.8);
+		bottom: 0;
+	}
+		
 }

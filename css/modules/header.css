@@ -109,6 +109,39 @@
 		color: blue;
 	} */
 
+}
+
+@media screen and (min-width: 992px) {
+
+	.navigation__menu {
+		width: 60vw;
+		transform: translateX(55%);
+		font-size: 0.9em;
+
+	}
+
+	.navigation__menu::after {
+		display: block;
+		transform: translateX(-100%);
+		width: 40%;
+		background-color: var(--red);
+		opacity: 0.2;
+		height: 1px;
+	}
+
+	.logo {
+		width: 3.5em;
+		height: 3.5em;
+	}
+
+	.navigation__menu--number {
+		display: inline;
+		font-weight: bolder;
+		padding-right: 0.3em;
+		font-size: 1em;
+
+}
+
 
 
 	

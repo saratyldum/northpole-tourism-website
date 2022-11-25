@@ -8,7 +8,7 @@
 
 #places::before {
 	content: '';
-	background-image: url(../../assets/images/backgroundPlaces.jpg);
+	background-image: url(../../assets/images/backgroundCrew.jpg);
 	background-size: cover;
 	opacity: 0.3;
 	position: absolute;
@@ -119,6 +119,10 @@
 	right: 0;
 }
 
+.north-pole__sign {
+	display: none;
+}
+
 @media screen and (min-width: 768px) {
 	#places h3 {
 		text-align: left;
@@ -135,4 +139,88 @@
 	#places {
 		padding: 3em 4em;
 	}
+}
+
+@media screen and (min-width: 992px) {
+	 #places {
+		padding-top: 8em;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(5, 1fr);
+	}
+
+	#places h3 {
+		grid-column: 1 / 3; 
+		grid-row: 1 / 2;
+		align-self: center;
+	}
+
+	#places .slideshow__image--active {
+		grid-column: 1 / 3;
+		grid-row: 2 / 6;
+		height: 100%;
+		width: 100%;
+		align-self: flex-start;
+		margin-top: 0;
+	}
+
+	#places .slideshow__infos{
+		grid-column: 3 / 6; 
+		grid-row: 2 / 6;
+		margin-left: 2em;
+	}
+
+	#places .slideshow__buttons {
+		grid-row: 1 / 2;
+		grid-column: 3 / 6; 
+		justify-content: flex-start;
+		margin-left: 2em;
+		padding-left: 5px;
+		align-self: flex-end;
+	}
+
+	#places .slideshow__images{
+		grid-row: 2 / 6;
+	}
+
+	#places h2 {
+		grid-row: 2 / 3;
+		padding:  0 5px;
+		text-align: left;
+		font-size: 3.5em;
+	}
+
+	#places h3 {
+		font-size: 1.2em;
+	}
+
+	#places p {
+		grid-row: 3 / 6;
+		padding: 0 5px;
+		text-align: left;
+	}
+
+	#places p::after {
+		content: '';
+		width: 100%;
+		height: 1px;
+		background-color: var(--green);
+		position: absolute;
+		bottom: -5em;
+		left: 0;
+	}
+
+	#places .slideshow__buttons::after {
+		display: none;
+	}
+
+	.north-pole__sign {
+		display: block;
+		position: absolute;
+		height: 8em;
+		width: 8em;
+		bottom: 9em;
+		left: 18em;
+	}
+	 
 }

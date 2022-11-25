@@ -68,3 +68,42 @@
 		font-size: 4em;
 	}
 }
+
+@media screen and (min-width: 992px) {
+	.hero {
+		display: flex;
+		padding-left: 6em;
+	}
+	
+	.hero h1, .hero h3, .hero p{
+		text-align: left;
+	}
+
+	.hero__span--the {
+		display: inline;
+		gap: 4em;
+	}
+
+	.hero__info {
+		padding: 2em 0;
+	}
+
+	.hero h1 {
+		font-size: 5em;
+	}
+
+	.hero h3 {
+	font-size: 1em;	
+	}
+
+	.hero p {
+		max-width: 50vw;
+	}
+
+	.hero__explore-button {
+		align-self: flex-end;
+		position: absolute;
+		right: 10%;
+	}
+	
+}
