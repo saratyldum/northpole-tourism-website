@@ -16,7 +16,7 @@ export default function PopUp() {
 	function showPopUp() {
 		popUp.showModal();
 	}
-	setTimeout(showPopUp, 1000)
+	setTimeout(showPopUp, 2000)
 
 	//closer den automatisk
 	// function hidePopUpTime() {
