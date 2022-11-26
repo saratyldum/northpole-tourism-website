@@ -116,7 +116,7 @@ export default function Wishlist() {
 
 		editingElement = event.currentTarget.parentElement.previousElementSibling;
 		wishlist.value = editingElement.innerHTML;
-		submitButton.textContent = 'Edit Item'
+		submitButton.textContent = 'Edit'
 		isEditing = true;
 	}
 
@@ -127,7 +127,7 @@ export default function Wishlist() {
 
 	function setBackToDefault() {
 		wishlist.value = '';
-		submitButton.textContent = 'Add Wish';
+		submitButton.textContent = 'Wish';
 		isEditing = false;
 	}
 }
