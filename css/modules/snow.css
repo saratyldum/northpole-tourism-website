@@ -16,7 +16,7 @@
 	z-index: 2;
 	animation: snowfall 10s linear infinite;
 	animation-delay: 10s;
-	transform: rotate(360deg);
+	/* transform: rotate(360deg); */
 	pointer-events: none;
 	/* z-index: 999; */
 }
@@ -37,12 +37,13 @@
 .toggle-snow{
 	z-index: 10;
 	position: fixed;
-	right: 10px;
-	bottom: 5px;
+	right: 15px;
+	bottom: 10px;
 	display: none;
+	cursor: pointer;
 }
 
-input[type='checkbox'] {
+.toggle-snow__checkbox {
 	position: relative;
 	width: 80px;
 	height: 40px;
@@ -52,13 +53,14 @@ input[type='checkbox'] {
 	transition: 0.5s;
 	background: #c6c6c6;
 	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
 }
 
-input:checked[type='checkbox'] {
+.toggle-snow__checkbox:checked {
 	background: var(--red);
 }
 
-input[type='checkbox']::before {
+.toggle-snow__checkbox::before {
 	content: '';
 	position: absolute;
 	width: 40px;
@@ -72,5 +74,6 @@ input[type='checkbox']::before {
 	transition: 0.5s;
 }
 
-input:checked[type='checkbox']::before {
+.toggle-snow__checkbox:checked::before{
 	left: 40px;
+}

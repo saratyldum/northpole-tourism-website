@@ -1,4 +1,5 @@
 export default function Header() {
+	// const mediaQuery = window.matchMedia('max-width: 992px')
 	const headerVisibleThreshold = 200;
 
 	let currentScrollDirection = null;
@@ -7,7 +8,7 @@ export default function Header() {
 	const navigation = document.querySelector('.navigation');
 	const logo = document.querySelector('.logo');
 
-	if (navigation !== null) {
+	if (navigation !== null /*&& mediaQuery.matches*/) {
 		window.addEventListener('scroll', handleWindowScroll);
 	}
 

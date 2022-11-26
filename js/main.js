@@ -18,5 +18,5 @@ for ( let count = 0; count < 5; count += 1) {
 
 Slideshow();
 Wishlist();
-// PopUp();
+PopUp();
 Countdown();
