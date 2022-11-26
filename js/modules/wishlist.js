@@ -1,6 +1,7 @@
 export default function Wishlist() {
 	let editingElement;
 	let isEditing = false;
+	let editID = '';
 
 	const alert = document.querySelector('.alert');
 	const form = document.querySelector('.wishlist__form');
@@ -17,6 +18,7 @@ export default function Wishlist() {
 		form.addEventListener('submit', handleFormSubmit);
 		clearButton.addEventListener('click', handleClearButtonClick);
 		sendButton.addEventListener('click', handleSendButtonClick);
+		window.addEventListener('DOMContentLoaded', setupItems);
 	}
 
 
@@ -41,41 +43,23 @@ export default function Wishlist() {
 	function addItem(event) {
 		event.preventDefault();
 		const value = wishlist.value;
+		const id = new Date().getTime().toString();
 		
 		if(value !== '' && isEditing === false) {
-			//create element
-			const element = document.createElement('article');
-			element.classList.add('wishlist__item');
-
-			element.innerHTML = `<p class="title">${value}</p>
-										<div class="wishlist__button-container">
-										<button class="wishlist__button--edit">
-										<img src="./assets/images/edit.svg" class="wishlist__button--edit-img">
-										</button>
-										<button class="wishlist__button--delete">
-										<img src="../assets/images/trash.svg" class="wishlist__button--trash-img"></button>
-										</div>`;
-
-			
-			// append child
-			list.appendChild(element);
-
-			const editButton = element.querySelector('.wishlist__button--edit');
-			const deleteButton = element.querySelector('.wishlist__button--delete');
-
-			deleteButton.addEventListener('click', deleteItem);
-			editButton.addEventListener('click', editItem);
-
+			createListItem(id, value)
 			
 			container.classList.add('show-container');
-			displayAlert('item added to wishlist', 'success');
+			displayAlert('Wish added to wishlist', 'success')
+			addToLocalStorage(id, value);
 
 
 		}else if(value !== '' && isEditing === true) {
 			editingElement.innerHTML = value;
-			displayAlert('Value changed', 'success')
-
+			displayAlert('Wish changed', 'success')
+			editLocalStorage(editID, value);
+			setBackToDefault();
 		}else {
+			displayAlert('Please add a wish', 'danger')
 
 		}
 	}
@@ -87,7 +71,7 @@ export default function Wishlist() {
 		setTimeout(() => {
 			alert.textContent = '';
 			alert.classList.remove(`alert-${action}`)
-		}, 1500);
+		}, 2000);
 	}
 
 	function clearItems() {
@@ -96,19 +80,24 @@ export default function Wishlist() {
 		if(items.length > 0) {
 			for (const item of items ) {
 				list.removeChild(item)
-				container.classList.remove('show-container');
 			}
+			container.classList.remove('show-container');
+			localStorage.removeItem('list');
 		}
+
+
 	}
 
 	function deleteItem(event) {
 		const element = event.currentTarget.parentElement.parentElement;
+		const id = element.dataset.id;
 		list.removeChild(element);
 		
 		if(list.children.length === 0) {
 			container.classList.remove('show-container')
 		}
 		displayAlert('item removed', 'danger');
+		removeFromLocalStorage(id);
 	}
 
 	function editItem(event) {
@@ -118,16 +107,94 @@ export default function Wishlist() {
 		wishlist.value = editingElement.innerHTML;
 		submitButton.textContent = 'Edit'
 		isEditing = true;
+		editID = element.dataset.id;
 	}
 
 	function openModal() {
 		modal.showModal()
 	}
 	
-
 	function setBackToDefault() {
 		wishlist.value = '';
 		submitButton.textContent = 'Wish';
 		isEditing = false;
+		editID = '';
 	}
-}
+
+	/************** LOCAL STORAGE **************/
+
+	function addToLocalStorage(id, value) {
+		const wish = { id:id, value:value }
+		let items = getLocalStorage();
+		
+		items.push(wish);
+		localStorage.setItem('list', JSON.stringify(items))
+	}
+
+	function removeFromLocalStorage(id) {
+		let items = getLocalStorage();
+
+		items = items.filter(function(item) {
+			if(item.id !==id) {
+				return item;
+			}
+		});
+		localStorage.setItem('list', JSON.stringify(items))
+	}
+
+	function editLocalStorage(id, value) {
+		let items = getLocalStorage();
+		items = items.map(function(item) {
+			if(item.id === id) {
+				item.value = value;
+			}
+			return item;
+		});
+		localStorage.setItem('list', JSON.stringify(items))
+	}
+
+	function getLocalStorage() {
+		return localStorage.getItem('list') 
+		? JSON.parse(localStorage.getItem('list'))
+		: [];
+	}
+
+	function setupItems() {
+		let items = getLocalStorage();
+		if(items.lenght > 0) {
+			items.forEach(function (item) {
+				createListItem(item.id, item.value)
+			});
+
+			container.classList.ass('show-container');
+		}
+	}
+	
+
+	function createListItem(id, value) {
+		//create element
+		const element = document.createElement('article');
+		element.classList.add('wishlist__item');
+		//lag id
+		const attribute = document.createAttribute('data-id');
+		attribute.value = id;
+		element.setAttributeNode(attribute);
+
+		element.innerHTML = `<p class="title">${value}</p>
+									<div class="wishlist__button-container">
+									<button class="wishlist__button--edit">
+									<img src="./assets/images/edit.svg" class="wishlist__button--edit-img">
+									</button>
+									<button class="wishlist__button--delete">
+									<img src="../assets/images/trash.svg" class="wishlist__button--trash-img"></button>
+									</div>`;
+
+		list.appendChild(element);
+
+		const editButton = element.querySelector('.wishlist__button--edit');
+		const deleteButton = element.querySelector('.wishlist__button--delete');
+
+		deleteButton.addEventListener('click', deleteItem);
+		editButton.addEventListener('click', editItem);
+	}
+ }

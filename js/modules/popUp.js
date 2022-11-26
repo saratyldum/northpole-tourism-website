@@ -3,7 +3,9 @@ export default function PopUp() {
 	const closeButton = document.querySelector('.popUp__close-button');
 	const blur = document.querySelector('#blur');
 
-	closeButton.addEventListener('click', handleCloseButtonClick);
+	if (closeButton !== null) {
+		closeButton.addEventListener('click', handleCloseButtonClick);
+	}
 
 	function handleCloseButtonClick() {
 		closePopUp();
@@ -16,7 +18,10 @@ export default function PopUp() {
 	function showPopUp() {
 		popUp.showModal();
 	}
-	setTimeout(showPopUp, 2000)
+
+	if (popUp !== null) {
+		setTimeout(showPopUp, 2000)
+	}
 
 	//closer den automatisk
 	// function hidePopUpTime() {

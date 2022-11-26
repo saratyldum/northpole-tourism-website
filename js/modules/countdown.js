@@ -21,6 +21,7 @@ export default function Countdown() {
 		minutes.innerHTML = minute < 10 ? '0' + minute : minute;
 		seconds.innerHTML = second < 10 ? '0' + second : second;
 	}
-
-	setInterval(updateCountdownTime, 1000)
+	if (days !== null) {
+		setInterval(updateCountdownTime, 1000)
+	}
 }
