@@ -23,7 +23,7 @@
 
 			<ul class="navigation__menu">
 				<li class="navigation__menu--item">
-					<a href="index.html #home" class="navigation__menu--link"><span class="navigation__menu--number">00</span>Home</a>
+					<a href="index.html#home" class="navigation__menu--link"><span class="navigation__menu--number">00</span>Home</a>
 				</li>
 				<li class="navigation__menu--item">
 					<a href="#places" class="navigation__menu--link"><span class="navigation__menu--number">01</span> Places</a>
@@ -41,14 +41,35 @@
 	
 	<main>
 		<div class="popUp-blur">
-			<dialog class="popUp">
+			<dialog open class="popUp">
+				<!-- <video autoplay muted loop id="popUp-video" src="./assets/videos/christmasCoundown-bg.mp4"></video> -->
 				<button class="popUp__close-button">
 					<img src="./assets/images/closeIcon.svg" alt="Close Menu">
 				</button>
-				<div class="coundown">
-					<h3>Time until christmas:</h3>
-					<pre id="countdown"></pre>
+				<h3>Time until christmas:</h3>
+				<div class="countdown">
+					<div class="days">
+						<span id="days">77</span>
+						<p>days</p>
+					</div>
+
+					<div class="hours">
+						<span id="hours"></span>
+						<p>hours</p>
+					</div>
+
+					<div class="minutes">
+						<span id="minutes"></span>
+						<p>minutes</p>
+					</div>
+
+					<div class="seconds">
+						<span id="seconds"></span>
+						<p>seconds</p>
+					</div>
+					
 				</div>
+					<!-- <pre id="countdown"></pre> -->
 			</dialog>
 		</div>
 
