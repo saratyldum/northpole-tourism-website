@@ -76,29 +76,33 @@
 }
 
 @media screen and (min-width: 410px) {
+	.popUp {
+		height: 85vh
+	}
 	.countdown {
 		flex-direction: row;
 		flex-wrap: wrap;
-		margin: 3em auto;
 	}
 
 	.countdown div {
-		padding: 4em;
+		padding: 3em;
+		flex: 0 0 calc(50% - 1em);
 	}
 
 }
 
 @media screen and (min-width: 768px) {
 	.popUp {
-		height: 70vh;
+		height: 55vh;
 		width: 80vw;
+		overflow: hidden;
+		min-width: 730px;
 	}
-
-	.popUp-video {
-		height: 40%;
-		padding-top: 1em;
+	.popUp__content {
+		position: absolute;
+		top: 4em;
+		right: 4em;
 	}
-
 	.countdown {
 		flex-direction: row;
 		flex-wrap: wrap;
