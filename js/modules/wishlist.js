@@ -40,9 +40,17 @@ export default function Wishlist() {
 		openModal();
 	}
 
+	/**
+	 * Adds or edits items in/to the wishlist depending on the values and adds them to or edits the local storage
+	 * 
+	 * @param {*} event 
+	 *  
+	 */
 	function addItem(event) {
 		event.preventDefault();
 		const value = wishlist.value;
+
+		//creates a random ID
 		const id = new Date().getTime().toString();
 		
 		if(value !== '' && isEditing === false) {
@@ -64,6 +72,46 @@ export default function Wishlist() {
 		}
 	}
 
+	/**
+	 * Creates an item and adds it to the wishlist, or grabs an already existing item and changes its value
+	 * 
+	 * @param {string} id The unique ID the element we want to add (or edit) has
+	 * @param {string} value the input from the wishlist
+	 */
+
+	function createListItem(id, value) {
+		//create element
+		const element = document.createElement('article');
+		element.classList.add('wishlist__item');
+		//lag id
+		const attribute = document.createAttribute('data-id');
+		attribute.value = id;
+		element.setAttributeNode(attribute);
+
+		element.innerHTML = `<p class="title">${value}</p>
+									<div class="wishlist__button-container">
+									<button class="wishlist__button--edit">
+									<img src="./assets/images/edit.svg" class="wishlist__button--edit-img">
+									</button>
+									<button class="wishlist__button--delete">
+									<img src="../assets/images/trash.svg" class="wishlist__button--trash-img"></button>
+									</div>`;
+
+		list.appendChild(element);
+
+		const editButton = element.querySelector('.wishlist__button--edit');
+		const deleteButton = element.querySelector('.wishlist__button--delete');
+
+		deleteButton.addEventListener('click', deleteItem);
+		editButton.addEventListener('click', editItem);
+	}
+
+	/**
+	 * Displays an alert message on the top of the wishlist for two seconds
+	 * 
+	 * @param {string} text The message to display
+	 * @param {string} action The 'success' or 'danger', each contected to a class with a different styling giving the alert a different color depending the action.
+	 */
 	function displayAlert(text, action) {
 		alert.textContent = text;
 		alert.classList.add(`alert-${action}`);
@@ -74,6 +122,9 @@ export default function Wishlist() {
 		}, 2000);
 	}
 
+	/**
+	 * Clears all items from the wishlist and the local storage
+	 */
 	function clearItems() {
 		const items = document.querySelectorAll('.wishlist__item');
 
@@ -84,10 +135,13 @@ export default function Wishlist() {
 			container.classList.remove('show-container');
 			localStorage.removeItem('list');
 		}
-
-
 	}
 
+	/**
+	 * Deletes selected item from the wishlist and local storage
+	 * 
+	 * @param {*} event Gives us the exact item that is clicked
+	 */
 	function deleteItem(event) {
 		const element = event.currentTarget.parentElement.parentElement;
 		const id = element.dataset.id;
@@ -100,6 +154,11 @@ export default function Wishlist() {
 		removeFromLocalStorage(id);
 	}
 
+	/**
+	 * Edits the value of an existing item on the wishlist
+	 * 
+	 * @param {*} event Gives us the item we want to edit
+	 */
 	function editItem(event) {
 		const element = event.currentTarget.parentElement.parentElement;
 
@@ -110,10 +169,16 @@ export default function Wishlist() {
 		editID = element.dataset.id;
 	}
 
+	/**
+	 * Shows popUp modal confirming that the wishlist has been sent
+	 */
 	function openModal() {
 		modal.showModal()
 	}
 	
+	/**
+	 * Sets all values back to their default state
+	 */
 	function setBackToDefault() {
 		wishlist.value = '';
 		submitButton.textContent = 'Wish';
@@ -159,6 +224,10 @@ export default function Wishlist() {
 		: [];
 	}
 
+	/**
+	 * 
+	 * @todo Få til å funke??
+	 */
 	function setupItems() {
 		let items = getLocalStorage();
 		if(items.lenght > 0) {
@@ -168,33 +237,5 @@ export default function Wishlist() {
 
 			container.classList.ass('show-container');
 		}
-	}
-	
-
-	function createListItem(id, value) {
-		//create element
-		const element = document.createElement('article');
-		element.classList.add('wishlist__item');
-		//lag id
-		const attribute = document.createAttribute('data-id');
-		attribute.value = id;
-		element.setAttributeNode(attribute);
-
-		element.innerHTML = `<p class="title">${value}</p>
-									<div class="wishlist__button-container">
-									<button class="wishlist__button--edit">
-									<img src="./assets/images/edit.svg" class="wishlist__button--edit-img">
-									</button>
-									<button class="wishlist__button--delete">
-									<img src="../assets/images/trash.svg" class="wishlist__button--trash-img"></button>
-									</div>`;
-
-		list.appendChild(element);
-
-		const editButton = element.querySelector('.wishlist__button--edit');
-		const deleteButton = element.querySelector('.wishlist__button--delete');
-
-		deleteButton.addEventListener('click', deleteItem);
-		editButton.addEventListener('click', editItem);
 	}
  }
