@@ -91,10 +91,10 @@ export default function Wishlist() {
 		element.innerHTML = `<p class="title">${value}</p>
 									<div class="wishlist__button-container">
 									<button class="wishlist__button--edit">
-									<img src="./assets/images/edit.svg" class="wishlist__button--edit-img">
+									<img src="./assets/icons/edit.png" class="wishlist__button--edit-img">
 									</button>
 									<button class="wishlist__button--delete">
-									<img src="../assets/images/trash.svg" class="wishlist__button--trash-img"></button>
+									<img src="../assets/icons/trash.png" class="wishlist__button--trash-img"></button>
 									</div>`;
 
 		list.appendChild(element);

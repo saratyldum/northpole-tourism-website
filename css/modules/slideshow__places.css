@@ -8,7 +8,7 @@
 
 #places::before {
 	content: '';
-	background-image: url(../../assets/images/backgroundCrew.jpg);
+	background-image: url(../../assets/images/small/backgroundPlaces.png);
 	background-size: cover;
 	opacity: 0.3;
 	position: absolute;
@@ -124,6 +124,10 @@
 }
 
 @media screen and (min-width: 768px) {
+	#places::before {
+		background-image: url(../../assets/images/medium/backgroundPlaces.png);
+	}
+
 	#places h3 {
 		text-align: left;
 	}
@@ -147,6 +151,10 @@
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(5, 1fr);
+	}
+
+	#places::before {
+		background-image: url(../../assets/images/big/backgroundPlaces.png);
 	}
 
 	#places h3 {

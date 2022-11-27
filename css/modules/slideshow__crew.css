@@ -8,7 +8,7 @@
 
 #crew::before {
 	content: '';
-	background-image: url(../../assets/images/backgroundPlaces.jpg);		
+	background-image: url(../../assets/images/small/backgroundCrew.png);		
 	background-size: cover;
 	opacity: 0.3;
 	position: absolute;
@@ -103,6 +103,10 @@
 
 
 @media screen and (min-width: 768px) {
+	#crew::before {
+		background-image: url(../../assets/images/medium/backgroundCrew.png);		
+	}
+	
 	#crew h3 {
 		text-align: left;
 	}
@@ -132,6 +136,10 @@
 		display: flex;
 	}
 
+	#crew::before {
+		background-image: url(../../assets/images/big/backgroundCrew.png);		
+	
+	}
 	#crew h2, #crew p {
 		text-align: left;
 		padding: 0.5em 0 0 0;

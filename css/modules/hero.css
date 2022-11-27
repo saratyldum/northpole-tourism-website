@@ -6,7 +6,7 @@
 
 .hero::before {
 	content: '';
-	background-image: url(../../assets/images/hero.jpg);
+	background-image: url(../../assets/images/small/hero.png);
 	background-size: cover;
 	background-position: right;
 	opacity: 0.2;
@@ -61,6 +61,7 @@
 
 	.hero::before {
 		background-position: left;
+		background-image: url(../../assets/images/medium/hero.png);
 	}
 
 	.hero h1 {
@@ -72,6 +73,11 @@
 	.hero {
 		display: flex;
 		padding-left: 6em;
+	}
+
+	.hero::before {
+		background-position: left;
+		background-image: url(../../assets/images/big/hero.png);
 	}
 	
 	.hero h1, .hero h3, .hero p{

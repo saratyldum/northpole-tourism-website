@@ -5,7 +5,7 @@
 }
 
 .snow {
-	background-image: url(../../assets/images/snowflaketest.png);
+	background-image: url(../../assets/images/snowflake.png);
 	filter: saturate(100%);
 	background-size: cover;
 	position: absolute;
