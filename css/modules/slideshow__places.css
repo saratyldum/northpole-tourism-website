@@ -10,7 +10,8 @@
 	content: '';
 	background-image: url(../../assets/images/small/backgroundPlaces.png);
 	background-size: cover;
-	opacity: 0.3;
+	background-position: center;
+	opacity: 0.7;
 	position: absolute;
 	top: 0;
 	right: 0;

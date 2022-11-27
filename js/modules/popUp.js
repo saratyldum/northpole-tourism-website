@@ -19,6 +19,9 @@ export default function PopUp() {
 		popUp.showModal();
 	}
 
+	/**
+	 * shows modal after 2 seconds
+	 */
 	if (popUp !== null) {
 		setTimeout(showPopUp, 2000)
 	}

@@ -21,6 +21,11 @@ export default function Snow() {
 		toggleSnow();
 	}
 
+	/**
+	 * Loops the addSnow funciton to create several snow flakes every three seconds, for a total of 10 seconds
+	 * 
+	 * @see addSnow()
+	 */
 	function addSnowfall() {
 		addSnow();
 		const snowfall = setInterval(() => {
@@ -33,6 +38,11 @@ export default function Snow() {
 		setTimeout(function() {clearInterval(snowfall); }, 10000)
 	}
   
+	/**
+	 * Creates snowflakes with different sizes and place them on random start points with random delay to make them fall at different times.
+	 * 
+	 * @param {*} event 
+	 */
 	function addSnow(event) {
 	  const snow = document.createElement('div');
 	  snow.classList.add('snow');
@@ -63,6 +73,11 @@ export default function Snow() {
 	  body.appendChild(snow);
 	}
 
+	/**
+	 * starts and stops the snowfall when toggle button is clicked
+	 * 
+	 *@todo fiks så man kan stoppe før intervallen er ferdig
+	 */
 	function toggleSnow() {
 		checked = !checked;
 		checkBox.checked = true;

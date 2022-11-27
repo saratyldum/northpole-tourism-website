@@ -16,7 +16,9 @@ export default function Header() {
 		toggleNavigationVisibility();
 	}
 
-
+	/**
+	 * shows navigation when user is scrolling up and hides it when scrolling down
+	 */
 	function toggleNavigationVisibility() {
 		const scrollY = window.scrollY;
 		let yPos = window.pageYOffset + 16;

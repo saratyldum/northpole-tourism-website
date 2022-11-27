@@ -7,6 +7,9 @@ export default function Hamburger() {
 	hamburgerIcon.addEventListener('click', toggleMenu);
 	closeIcon.addEventListener('click', toggleMenu)
 
+	/**
+	 * Toggles the visibility of the navigation menu when the hamburger icon or close icon is clicked
+	 */
 	function toggleMenu() {;
 		if (menu.classList.contains('showMenu')) {
 			menu.classList.remove('showMenu');
@@ -20,8 +23,4 @@ export default function Hamburger() {
 	for (let index = 0; index < menuItems.length; index +=1) {
 		menuItems[index].addEventListener('click', toggleMenu);
 	};
-
-	/**
-	 * add scroll up show navigation
-	 */
 }

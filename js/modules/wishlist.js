@@ -186,8 +186,15 @@ export default function Wishlist() {
 		editID = '';
 	}
 
+
 	/************** LOCAL STORAGE **************/
 
+	/**
+	 * Saves items that are added to the wishlist to the Local Storage
+	 * 
+	 * @param {string} id The unique ID the element we want to add has
+	 * @param {string} value the input from the wishlist
+	 */
 	function addToLocalStorage(id, value) {
 		const wish = { id:id, value:value }
 		let items = getLocalStorage();
@@ -196,6 +203,13 @@ export default function Wishlist() {
 		localStorage.setItem('list', JSON.stringify(items))
 	}
 
+	/**
+	 * Gets information from the local storage and removes the chosen item from there
+	 * 
+	 * @param {string} id The unique ID the element we want to remove has
+	 * 
+	 * @see getLocalStorage()
+	 */
 	function removeFromLocalStorage(id) {
 		let items = getLocalStorage();
 
@@ -207,6 +221,14 @@ export default function Wishlist() {
 		localStorage.setItem('list', JSON.stringify(items))
 	}
 
+	/**
+	 * Gets information from the local storage and edits the relevant key value pairs in when the value is changed in the wishlist
+	 * 
+	 * @param {string} id The unique ID the element we want to edit has
+	 * @param {string} value the new input from the wishlist we want the value to change to 
+	 * 
+	 * @see getLocalStorage()
+	 */
 	function editLocalStorage(id, value) {
 		let items = getLocalStorage();
 		items = items.map(function(item) {
@@ -218,6 +240,11 @@ export default function Wishlist() {
 		localStorage.setItem('list', JSON.stringify(items))
 	}
 
+	/**
+	 * Gives us all the key value pairs we have in our local storage
+	 * 
+	 * @returns the list of key value pairs we have in the local storage
+	 */
 	function getLocalStorage() {
 		return localStorage.getItem('list') 
 		? JSON.parse(localStorage.getItem('list'))
@@ -225,7 +252,7 @@ export default function Wishlist() {
 	}
 
 	/**
-	 * 
+	 * Takes the items from the local storage and cre
 	 * @todo Få til å funke??
 	 */
 	function setupItems() {

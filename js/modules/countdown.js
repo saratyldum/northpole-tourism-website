@@ -6,6 +6,9 @@ export default function Countdown() {
 
 	const christmasTime = new Date(`2022-12-24 00:00:00`);
 
+	/**
+	 * Updates the countdown to Christmas every second
+	 */
 	function updateCountdownTime() {
 		const currentTime = new Date();
 		const difference = christmasTime - currentTime;
