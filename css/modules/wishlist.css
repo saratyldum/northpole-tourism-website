@@ -4,30 +4,79 @@
 
 #inquires {
 	color: var(--green);
-	background-color: var(--white);
-	background-image:url("https://www.transparenttextures.com/patterns/beige-paper.png");
+	background-color: var(--red);
+	/* background-image:url("https://www.transparenttextures.com/patterns/beige-paper.png"); */
 	font-family: 'Corinthia', cursive;
-	width: 60vw;
-	max-width: 400px;
-	height: 70vh;
-	border-width: 5px;
-	border-style: solid;
-	border-image: repeating-linear-gradient(-45deg,
-	var(--red),
-	var(--red) 12px,
-	transparent 10px,
-	transparent 23px) 2;
-	margin: 9em auto;
-	text-align: center;
-	box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
-	z-index: 2;
+	object-fit: scale-down;
 	position: relative;
 	overflow-y: scroll;
+	width: 80vw;
+	height: 70vh;
+	margin: 20vh auto 10vh;
+	z-index: 2;
+	overflow-y: scroll;
+	box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+#inquires::before {
+	content: '';
+	background-image: url(../../assets/images/santaBeard.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+}
+
+.santa__face {
+	background-color: #fcd9c3;
+	height: 70px;
+	width: 250px;
+	position: absolute;
+	top: 3px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 35px;
+}
+
+.santa__eyeL, .santa__eyeR {
+	height: 15px;
+	width: 30px;
+	border-top: 8px solid #262626;
+	border-radius: 30px 30px 0 0;
+	position: absolute;
+}
+
+.santa__eyeL {
+	top: 20px;
+	left: 35%;
+}
+
+.santa__eyeR {
+	top: 20px;
+	left: 55%;
+}
+
+.santa__nose {
+	background-color: #fbd1b6;
+	height: 40px;
+	width: 45px;
+	border-radius: 50%;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 15px;
 }
 
 .alert {
+	margin-top: 1em;
 	margin-bottom: 1em;
-	height: 2em;
+	height: 1.5em;
 	display: grid;
 	align-items: center;
 	text-align: center;
@@ -161,8 +210,11 @@ transition: 0.3s;
 	position: relative;
 	overflow: visible;
 	transition: 0.3s linear;
+	font-family: 'Bellefair';
+	display: flex;
+	justify-content: center;
 }
-
+/* 
 .wishlist__button--send::before {
 	content: '';
 	display: block;
@@ -176,7 +228,7 @@ transition: 0.3s;
 		url(../../assets/images/buttotSnowMiddle.png) no-repeat 50% 0,
 		url(../../assets/images/buttonSnowRight.png) no-repeat 100% 0;
 
-}
+} */
 
 .wishlist__button--send:hover, .wishlist__button--clear:hover {
 	background: #a61715;
@@ -188,6 +240,8 @@ transition: 0.3s;
 		1px 1px 3px rgba(0, 0, 0, 0.75);
 
 }
+
+/*************************************************/
 
 .wishlist__modal {
 	top: 50%;
@@ -221,7 +275,7 @@ transition: 0.3s;
 	border-radius: 0 50% 50% 50%;
 	transform: rotate(-135deg);
 }
-
+ /*
 .santa__face {
 	background-color: #fcd9c3;
 	height: 60px;
@@ -306,3 +360,5 @@ transition: 0.3s;
 		transform: rotate(-10deg);
 	}
 }
+
+*/
