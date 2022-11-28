@@ -1,68 +1,53 @@
 export default function Dragdown() {
 	let clicked = false;
 	
-	const tabletDevice = window.matchMedia('(min-width: 768px)');
+	const biggerDevice = window.matchMedia('(min-width: 768px)');
 	const dragdownButton = document.querySelector('.countdown__dragdown--button');
 	const dragdown = document.querySelector('.countdown__dragdown');
 
 	if (dragdownButton !== null) {
+		biggerDevice.addEventListener('change', handleDeviceChange);
 		dragdownButton.addEventListener('click', handleDradownButtonClick);
-		tabletDevice.addListener(handleDeviceChange);
 	}
 
 
 
 	function handleDradownButtonClick() {
-		handleDeviceChange(tabletDevice);
-
-		// showCountdownMobile();
-		// showCountdownTablet(mediaQuery)
+		handleDeviceChange(biggerDevice);
 	}
 	
-	function handleDeviceChange(e) {
-		clicked = !clicked;
-
-		if(e.matches && clicked) {
-			dragdown.style.transform = 'translate(0, 0)';
-			console.log('tablet', clicked);
-		} else if(e.matches && clicked === false) {
-			dragdown.style.transform = 'translate(100%, 0)';
-			console.log('tablet', clicked);
-		
-		} else if(!e.matches && clicked) {
-			dragdown.style.transform = 'translateY(0)';
-			console.log('mobile');
-		}else if(!e.matches && !clicked) {
-			dragdown.style.transform = 'translateY(-100%)';		
+	function handleDeviceChange(biggerDevice) {
+		if(biggerDevice.matches) {
+			showCountdownBiggerScreen();
+		} else {
+			showCountdownMobile();
 		}
 	}
-
-	// handleDeviceChange(tabletDevice);
 
 
 	/**
 	 * Makes countdown viisble by dragging it down
 	 * 
-	 * @todo media query, translateX when min-width=768
 	 */
-	// function showCountdownMobile() {
-	// 	clicked = !clicked;
+	function showCountdownMobile() {
+		clicked = !clicked;
+		console.log(clicked);
 
-	// 	if(clicked) {
-	// 		dragdown.style.transform = 'translateY(0)';
-	// 	}else {
-	// 		dragdown.style.transform = 'translateY(-100%)';		
-	// 	}
-	// }
-	// function showCountdownTablet(mediaQuery) {
-	// 	clicked = !clicked;
+		if(clicked) {
+			dragdown.style.transform = 'translate(0, 0)';
+		}else {
+			dragdown.style.transform = 'translate(0, -100%)';		
+		}
+	}
+	function showCountdownBiggerScreen() {
+		clicked = !clicked;
 
-	// 	if(mediaQuery.matches && clicked) {
-	// 		dragdown.style.transform = 'translate(0, 0)';
-	// 	  }else {
-	// 		dragdown.style.transform = 'translate(100%, 0)';
-	//  	 }
-	// }
+		if(clicked) {
+			dragdown.style.transform = 'translate(0, 0)';
+		}else {
+			dragdown.style.transform = 'translate(100%, 0)';		
+		}
+	}
 	
 
 
