@@ -18,28 +18,28 @@
 .light-bulb.bulb-color-one {
 	background-color: var(--bulb-color-one);
 	/* box-shadow: 0px 1px 10px 5px var(--bulb-color-one); */
-	animation: blinking-color-bulb-one 1s infinite;
+	animation: blinking-color-bulb-one 1s linear infinite;
 }
 
 
 .light-bulb.bulb-color-two {
 	background-color: var(--bulb-color-two);
-	animation: blinking-color-bulb-two 1s infinite;
+	animation: blinking-color-bulb-two 1s linear infinite;
 }
 
 .light-bulb.bulb-color-three {
 	background-color: var(--bulb-color-three);
-	animation: blinking-color-bulb-three 1s infinite;
+	animation: blinking-color-bulb-three 1s linear infinite;
 }
 
 .light-bulb.bulb-color-four {
 	background-color: var(--bulb-color-four);
-	animation: blinking-color-bulb-four 1s infinite;
+	animation: blinking-color-bulb-four 1s linear infinite;
 }
 
 .light-bulb.bulb-color-five {
 	background-color: var(--bulb-color-five);
-	animation: blinking-color-bulb-five 1s infinite;
+	animation: blinking-color-bulb-five 1s linear infinite;
 }
 
 .light-bulb::before {
@@ -74,7 +74,6 @@
 @keyframes blinking-color-bulb-one {
 	0% {
 		box-shadow: 0, 1px, 10px, 5px, var(--bulb-color-one);
-		
 	}
 	25% {
 		box-shadow: 0, 1px, 15px, 5px, var(--bulb-color-one);
@@ -86,7 +85,7 @@
 		box-shadow: 0, 1px, 25px, 5px, var(--bulb-color-one);
 	}
 	100% {
-		/* box-shadow: none; */
+		box-shadow: 0;
 	}
 }
 
