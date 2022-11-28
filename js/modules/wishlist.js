@@ -257,12 +257,12 @@ export default function Wishlist() {
 	 */
 	function setupItems() {
 		let items = getLocalStorage();
-		if(items.lenght > 0) {
+		if(items.length > 0) {
 			items.forEach(function (item) {
 				createListItem(item.id, item.value)
 			});
 
-			container.classList.ass('show-container');
+			container.classList.add('show-container');
 		}
 	}
  }

@@ -1,10 +1,11 @@
 export default function Snow() {
 	let checked = false;
+	let snowIntervalTimer = null;
 
 	const button = document.querySelector('.hero__explore-button');
 	const body = document.querySelector('body');
 	const checkBox = document.querySelector('.toggle-snow__checkbox')
-	const checkBoxDiv = document.querySelector('.toggle-snow')
+	const checkBoxDiv = document.querySelector('.toggle-snow');
   
 	if ( button !== null) {
 		button.addEventListener('click', handleButtonClick);
@@ -13,7 +14,7 @@ export default function Snow() {
 	}
   
 	function handleButtonClick() {
-	  addSnowfall();
+	  //addSnowfall();
 	  toggleSnow();
 	}
 
@@ -28,14 +29,16 @@ export default function Snow() {
 	 */
 	function addSnowfall() {
 		addSnow();
-		const snowfall = setInterval(() => {
+
+		snowIntervalTimer = setInterval(() => {
 			for (let index = 1; index < 10; index++) {
-			 
-			 addSnow();
+				addSnow();
 			}
 		}, 3000);
  
-		setTimeout(function() {clearInterval(snowfall); }, 10000)
+		setTimeout(() => {
+			clearInterval(snowIntervalTimer); 
+		}, 10000);
 	}
   
 	/**
@@ -83,15 +86,18 @@ export default function Snow() {
 		checkBox.checked = true;
 		checkBoxDiv.style.display = 'block'
 
-		if(checked === false) {
+		if (checked === false) {
 			const snowfall = document.querySelectorAll('.snow');
+
 			snowfall.forEach(snow => {
 				snow.remove();
 			})
+
 			checkBox.checked = false;
-			clearInterval(snowfall)
+
+			clearInterval(snowIntervalTimer);
 		} else {
 			addSnowfall();
 		}
-}
+	}
 }

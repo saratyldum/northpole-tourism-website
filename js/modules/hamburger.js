@@ -1,4 +1,6 @@
 export default function Hamburger() {
+	let menuVisible = false;
+
 	const menu = document.querySelector('.navigation__menu');
 	const menuItems = document.querySelectorAll('.navigation__menu--link');
 	const hamburgerIcon = document.querySelector('.navigation__hamburger-button');
@@ -20,7 +22,7 @@ export default function Hamburger() {
 		}
 	}
 
-	for (let index = 0; index < menuItems.length; index +=1) {
-		menuItems[index].addEventListener('click', toggleMenu);
-	};
+	// for (let index = 0; index < menuItems.length; index +=1) {
+	// 	menuItems[index].addEventListener('click', toggleMenu);
+	// };
 }
