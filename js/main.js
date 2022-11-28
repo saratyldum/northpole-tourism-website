@@ -4,7 +4,7 @@ import Explore from './modules/explore.js';
 import Snow from './modules/snow.js';
 import Slideshow from './modules/slideshow.js';
 import Wishlist from './modules/wishlist.js';
-import PopUp from './modules/popUp.js';
+import Dragdown from './modules/countdownDragdown.js';
 import Countdown from './modules/countdown.js';
 
 
@@ -18,5 +18,5 @@ for ( let count = 0; count < 5; count += 1) {
 
 Slideshow();
 Wishlist();
-PopUp();
+Dragdown();
 Countdown();

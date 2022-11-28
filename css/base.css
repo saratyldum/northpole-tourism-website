@@ -4,6 +4,7 @@ body {
 	color: var(--green);
 	font-family: 'Barlow', sans-serif;
 	letter-spacing: 1px;
+	overflow-x: hidden;
 }
 
 section {
