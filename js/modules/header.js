@@ -1,25 +1,34 @@
 export default function Header() {
 	// const mediaQuery = window.matchMedia('max-width: 992px')
 	const headerVisibleThreshold = 200;
-
 	let currentScrollDirection = null;
 	let previousScrollPosition = 0;
 	
+	const smallerDevice = window.matchMedia('(max-width: 992px)');
 	const navigation = document.querySelector('.navigation');
 	const logo = document.querySelector('.logo');
 
-	if (navigation !== null /*&& mediaQuery.matches*/) {
+	if (navigation !== null) {
+		smallerDevice.addEventListener('change', handleDeviceChange)
 		window.addEventListener('scroll', handleWindowScroll);
 	}
 
-	function handleWindowScroll(event) {
-		toggleNavigationVisibility();
+	function handleWindowScroll() {
+		handleDeviceChange(smallerDevice);
+	}
+
+
+	
+	function handleDeviceChange(smallerDevice) {
+		if(smallerDevice.matches) {
+			toggleNavigationVisibility(event);
+		} 
 	}
 
 	/**
 	 * shows navigation when user is scrolling up and hides it when scrolling down
 	 */
-	function toggleNavigationVisibility() {
+	function toggleNavigationVisibility(event) {
 		const scrollY = window.scrollY;
 		let yPos = window.pageYOffset + 16;
 

@@ -5,7 +5,7 @@
 	position: absolute;
 	width: 85vw;
 	left: 7.5vw;
-	/* top: 1.5em; */
+	top: 1.5em;
 	z-index: 4;
 } 
 
@@ -131,9 +131,9 @@
 
 @media screen and (min-width: 992px) {
 
-	/* .navigation {
+	.navigation {
 		position: fixed;
-	} */
+	}
 
 	.navigation__menu {
 		width: 60vw;

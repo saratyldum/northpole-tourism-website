@@ -49,7 +49,7 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.hero__explore-button:hover {
+.hero__explore-button:hover, .hero__explore-button:focus{
 	padding: 2em 1em;
 	border: 30px solid rgba(245, 245, 245, 0.6)
 }
