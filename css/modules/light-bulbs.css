@@ -17,8 +17,8 @@
 
 .light-bulb.bulb-color-one {
 	background-color: var(--bulb-color-one);
-	/* box-shadow: 0px 1px 10px 5px var(--bulb-color-one);
-	/* animation: blinking-color-bulb-one 1s infinite; */
+	/* box-shadow: 0px 1px 10px 5px var(--bulb-color-one); */
+	animation: blinking-color-bulb-one 1s infinite;
 }
 
 
@@ -74,6 +74,7 @@
 @keyframes blinking-color-bulb-one {
 	0% {
 		box-shadow: 0, 1px, 10px, 5px, var(--bulb-color-one);
+		
 	}
 	25% {
 		box-shadow: 0, 1px, 15px, 5px, var(--bulb-color-one);
@@ -85,7 +86,7 @@
 		box-shadow: 0, 1px, 25px, 5px, var(--bulb-color-one);
 	}
 	100% {
-		box-shadow: none;
+		/* box-shadow: none; */
 	}
 }
 
