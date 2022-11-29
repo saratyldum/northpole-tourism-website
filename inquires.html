@@ -46,7 +46,38 @@
 			<div class="light-bulb bulb-color-four"></div>
 			<div class="light-bulb bulb-color-five"></div>
 			<div class="light-bulb bulb-color-one"></div>
+			<div class="light-bulb bulb-color-two"></div>
+			<div class="light-bulb bulb-color-three"></div>
+			<div class="light-bulb bulb-color-four"></div>
+			<div class="light-bulb bulb-color-five"></div>
+			<div class="light-bulb bulb-color-one"></div>
+			<div class="light-bulb bulb-color-two"></div>
+			<div class="light-bulb bulb-color-three"></div>
+			<div class="light-bulb bulb-color-four"></div>
+			<div class="light-bulb bulb-color-five"></div>
+			<div class="light-bulb bulb-color-one"></div>
 		</section>
+
+		<div class="light-bulb__settings">
+			<div class="light-bulb__group">
+				<label>State:</label>
+				<div class="light-bulb__checkbox-container">
+					<input type="checkbox" class="light-switch">
+				</div>
+				<span class="light-switch-state">off</span>
+			</div>
+
+			<div class="light-bulb__group">
+				<label>Interval:</label>
+				<input 
+					class="interval-control" 
+					type="number" 
+					value="1.1" 
+					step="0.1"
+					min="0.1" 
+					max="2">
+			</div>
+		</div>
 
 		
 		<section class="wishlist" id="inquires">
@@ -65,42 +96,18 @@
 			</form>
 			
 			<div class="wishlist__container">
-				<div class="wishlist__list">
-					<!-- HER SKAL ITEMS:
-						
-					<p class="title">ITEM</p>
-					<div class="wishlist__button-container">
-						<button class="wishlist__button--edit">
-							<img src="./assets/edit.svg" class="wishlist__button--edit-img">
-						</button>
-						<button class="wishlist__button--delete">
-							<img src="./assets/trash.svg" class="wishlist__button--trash-img">
-						</button>
-						</div> -->
-				</div>
+				<div class="wishlist__list"></div>
 				<button type="button" class="wishlist__button--clear">Clear items</button>
 				<button type="button" class="wishlist__button--send">Send Wishlist</button>
 
 			</div>
 		</section>
 
-		<div>
-			<dialog class="wishlist__modal">
-				<div class="santa">
-					<div class="santa__beard"></div>
-					<div class="santa__face">
-						<div class="santa__face--eyeL"></div>
-						<div class="santa__face--eyeR"></div>
-						<div class="santa__face--nose"></div>
-						<div class="santa__face--mouth"></div>
-					</div>
-					<div class="santa__hat">
-						<div class="santa__hat--bottom"></div>
-						<div class="santa__hat--top"></div>
-					</div>
-				</div>
-				<p>Your wishlist is sent, santa will be in touch</p>
-			</dialog>
+		<div class="flying-santa">
+			<img src="./assets/images/flyingSanta.gif" alt="">
+		</div>
+		<div class="wishlist__sent">
+			Your wishlist is sent, Santa will be in touch.
 		</div>
 	</main>
 </body>
