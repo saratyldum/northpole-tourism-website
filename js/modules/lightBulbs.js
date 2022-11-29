@@ -11,20 +11,23 @@ export default function LightBulbs() {
 	};
 
 	checkboxContainer.addEventListener('click', handleCheckboxContainerClick);
-	lightSwitch.addEventListener('change', handleLightSwitchChange);
 	intervalControl.addEventListener('change', handleIntervalControlChange);
 
-	function handleCheckboxContainerClick(event) {
-		event.target.classList.toggle('light-bulb__checkbox-container--active')
-		lightSwitch.click();
+	function handleCheckboxContainerClick() {
+		controlLights();
 	}
 
-	function handleLightSwitchChange() {
+	function handleIntervalControlChange(event) {
+		controlInterval(event);
+	}
+
+
+	function controlLights() {
 		lightBulbContainer.classList.toggle('on');
 		lightSwitchState.textContent = lightSwitchLabels[lightSwitchState.textContent]
 	}
 
-	function handleIntervalControlChange(event) {
+	function controlInterval(event) {
 		const duration = event.target.value;
 		lightBulbs.forEach(lightBulb => {
 			console.log(lightBulb);

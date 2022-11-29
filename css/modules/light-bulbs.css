@@ -23,7 +23,7 @@
 	flex-basis: 80px;
 }
 
-.light-bulb__checkbox-container {
+.light-switch {
 	cursor: pointer;
 	width: 50px;
 	height: 30px;
@@ -33,17 +33,23 @@
 	padding: 6px 12px;
 	position: relative;
 	transition-duration: 0.4s;
+	appearance: none;
+	outline: none;
+}
+
+.light-switch:checked {
+	background-color: black;
 }
 
 .light-bulb__checkbox-container:active {
 	background: black;
 }
 
-.light-bulb__checkbox-container:active::after {
+.light-switch:checked::after {
 	left: 48%;
 }
 
-.light-bulb__checkbox-container::after {
+.light-switch::after {
 	content: '';
 	position: absolute;
 	width: 25px;
@@ -53,11 +59,6 @@
 	left: 5%;
 	top: 9%;
 	transition-duration: 0.4s;
-}
-
-.light-switch {
-	opacity: 0;
-	visibility: hidden;
 }
 
 .interval-control {
