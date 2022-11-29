@@ -14,12 +14,36 @@ export default function Snow() {
 	}
   
 	function handleButtonClick() {
-	  //addSnowfall();
 	  toggleSnow();
 	}
 
 	function handleCheckBoxClick() {
 		toggleSnow();
+	}
+
+		/**
+	 * starts and stops the snowfall when toggle button is clicked
+	 * 
+	 *@todo fiks så man kan stoppe før intervallen er ferdig
+	 */
+	 function toggleSnow() {
+		checked = !checked;
+		checkBox.checked = true;
+		checkBoxDiv.style.display = 'block'
+
+		if (checked === false) {
+			const snowfall = document.querySelectorAll('.snow');
+
+			snowfall.forEach(snow => {
+				snow.remove();
+			})
+
+			checkBox.checked = false;
+
+			clearInterval(snowIntervalTimer);
+		} else {
+			addSnowfall();
+		}
 	}
 
 	/**
@@ -76,28 +100,4 @@ export default function Snow() {
 	  body.appendChild(snow);
 	}
 
-	/**
-	 * starts and stops the snowfall when toggle button is clicked
-	 * 
-	 *@todo fiks så man kan stoppe før intervallen er ferdig
-	 */
-	function toggleSnow() {
-		checked = !checked;
-		checkBox.checked = true;
-		checkBoxDiv.style.display = 'block'
-
-		if (checked === false) {
-			const snowfall = document.querySelectorAll('.snow');
-
-			snowfall.forEach(snow => {
-				snow.remove();
-			})
-
-			checkBox.checked = false;
-
-			clearInterval(snowIntervalTimer);
-		} else {
-			addSnowfall();
-		}
-	}
 }
