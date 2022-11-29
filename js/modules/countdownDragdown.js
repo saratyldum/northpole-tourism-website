@@ -13,6 +13,7 @@ export default function Dragdown() {
 
 
 	function handleDradownButtonClick() {
+		clicked = !clicked;
 		handleDeviceChange(biggerDevice);
 	}
 	
@@ -30,9 +31,6 @@ export default function Dragdown() {
 	 * 
 	 */
 	function showCountdownMobile() {
-		clicked = !clicked;
-		console.log(clicked);
-
 		if(clicked) {
 			dragdown.style.transform = 'translate(0, 0)';
 		}else {
@@ -40,28 +38,10 @@ export default function Dragdown() {
 		}
 	}
 	function showCountdownBiggerScreen() {
-		clicked = !clicked;
-
 		if(clicked) {
 			dragdown.style.transform = 'translate(0, 0)';
 		}else {
 			dragdown.style.transform = 'translate(100%, 0)';		
 		}
 	}
-	
-
-
-	/**
-	 * shows modal after 2 seconds
-	 */
-	// if (popUp !== null) {
-	// 	setTimeout(showPopUp, 2000)
-	// }
-
-	//closer den automatisk
-	// function hidePopUpTime() {
-	// 	popUp.style.display = 'none'
-	// }
-	// setTimeout(closePopUp, 10000)
-	
 }
