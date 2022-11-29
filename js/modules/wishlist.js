@@ -12,7 +12,8 @@ export default function Wishlist() {
 	const clearButton = document.querySelector('.wishlist__button--clear');
 	const sendButton = document.querySelector('.wishlist__button--send');
 	const editButton = document.querySelector('.wishlist__button--edit');
-	const modal = document.querySelector('.wishlist__modal');
+	const flyingSanta = document.querySelector('.flying-santa');
+	const sentMessage = document.querySelector('.wishlist__sent');
 
 	if ( wishlist !== null) {
 		form.addEventListener('submit', handleFormSubmit);
@@ -37,7 +38,7 @@ export default function Wishlist() {
 	function handleSendButtonClick() {
 		clearItems();
 		setBackToDefault();
-		openModal();
+		sentWishlistConfirmation();
 	}
 
 	/**
@@ -50,7 +51,7 @@ export default function Wishlist() {
 		event.preventDefault();
 		const value = wishlist.value;
 
-		//creates a random ID
+		//creates a random number that works as ID
 		const id = new Date().getTime().toString();
 		
 		if(value !== '' && isEditing === false) {
@@ -68,7 +69,6 @@ export default function Wishlist() {
 			setBackToDefault();
 		}else {
 			displayAlert('Please add a wish', 'danger')
-
 		}
 	}
 
@@ -83,7 +83,7 @@ export default function Wishlist() {
 		//create element
 		const element = document.createElement('article');
 		element.classList.add('wishlist__item');
-		//lag id
+		//giveb id
 		const attribute = document.createAttribute('data-id');
 		attribute.value = id;
 		element.setAttributeNode(attribute);
@@ -172,8 +172,9 @@ export default function Wishlist() {
 	/**
 	 * Shows popUp modal confirming that the wishlist has been sent
 	 */
-	function openModal() {
-		modal.showModal()
+	function sentWishlistConfirmation() {
+		sentMessage.style.display = 'block';
+		flyingSanta.classList.add('flying-santa__animation');
 	}
 	
 	/**
