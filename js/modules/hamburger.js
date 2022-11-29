@@ -13,7 +13,9 @@ export default function Hamburger() {
 	 * Toggles the visibility of the navigation menu when the hamburger icon or close icon is clicked
 	 */
 	function toggleMenu() {;
-		if (menu.classList.contains('showMenu')) {
+		menuVisible = !menuVisible;
+
+		if (menuVisible) {
 			menu.classList.remove('showMenu');
 			closeIcon.style.display = 'none';
 		}else {
@@ -22,7 +24,8 @@ export default function Hamburger() {
 		}
 	}
 
-	// for (let index = 0; index < menuItems.length; index +=1) {
-	// 	menuItems[index].addEventListener('click', toggleMenu);
-	// };
+	//gjør at menyen closer når du trykker på menu items
+	for (let index = 0; index < menuItems.length; index +=1) {
+		menuItems[index].addEventListener('click', toggleMenu);
+	};
 }
