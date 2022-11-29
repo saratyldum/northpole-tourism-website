@@ -6,6 +6,7 @@ import Slideshow from './modules/slideshow.js';
 import Wishlist from './modules/wishlist.js';
 import Dragdown from './modules/countdownDragdown.js';
 import Countdown from './modules/countdown.js';
+import LightBulbs from './modules/lightBulbs.js';
 
 
 Hamburger();
@@ -20,3 +21,4 @@ Slideshow();
 Wishlist();
 Dragdown();
 Countdown();
+LightBulbs();
