@@ -2,7 +2,7 @@ export default function LightBulbs() {
 	const checkboxContainer = document.querySelector('.light-bulb__checkbox-container');
 	const lightSwitch = document.querySelector('.light-switch');
 	const lightBulbContainer = document.querySelector('.light-bulbs');
-	const lightBulbs = lightBulbContainer.querySelectorAll('.light-bulb');
+	const lightBulbs = document.querySelectorAll('.light-bulb');
 	const intervalControl = document.querySelector('.interval-control');
 	const lightSwitchState = document.querySelector('.light-switch-state');
 	const lightSwitchLabels = {
@@ -10,8 +10,10 @@ export default function LightBulbs() {
 		off: 'on'
 	};
 
-	checkboxContainer.addEventListener('click', handleCheckboxContainerClick);
-	intervalControl.addEventListener('change', handleIntervalControlChange);
+	if (checkboxContainer !== null) {
+		checkboxContainer.addEventListener('click', handleCheckboxContainerClick);
+		intervalControl.addEventListener('change', handleIntervalControlChange);
+	}
 
 	function handleCheckboxContainerClick() {
 		controlLights();
