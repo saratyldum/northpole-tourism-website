@@ -1,6 +1,8 @@
 export default function Slideshow() {
 	let currentInfoSlideIndex = 0;
 	let currentImageIndex = 0;
+	let isPlacesVisible;
+	let isCrewVisible;
 
 	const slideshow = document.querySelectorAll('.slideshow');
 	const buttons = document.querySelectorAll('.slideshow__button');
@@ -25,12 +27,17 @@ export default function Slideshow() {
 
 	function handleButtonsClick(event, index) {
 		changeCurrentIndex(index);
-		renderHTML();
+		isPlacesInViewport();
+		isCrewInViewport();
+		renderHTML(index);
 	}
 
 	function handleDotsClick(event, index) {
 		changeCurrentIndexDots(index);
-		renderHTML();
+		isCrewInViewport();
+		isPlacesInViewport();
+
+		renderHTML(index);
 	}
 
 	function changeCurrentIndexDots(index) {
@@ -42,30 +49,65 @@ export default function Slideshow() {
 		currentImageIndex = index;
 	}
 
+	function isPlacesInViewport() {
+		let slideshowPlacesPosition = slideshow[0].getBoundingClientRect();
+
+		isPlacesVisible = slideshowPlacesPosition.top + (slideshowPlacesPosition.height/2) > 0 && slideshowPlacesPosition.left + (slideshowPlacesPosition.width/2) > 0 && slideshowPlacesPosition.top + (slideshowPlacesPosition.height/2) < (window.innerHeight || document.documentElement.clientHeight) && slideshowPlacesPosition.left + (slideshowPlacesPosition.width/2) < (window.innerWidth || document.documentElement.clientWidth);
+
+		return isPlacesVisible;
+	}
+
+	function isCrewInViewport() {
+		let slideshowCrewPosition = slideshow[1].getBoundingClientRect();
+
+		isCrewVisible = slideshowCrewPosition.top + (slideshowCrewPosition.height/2) > 0 && slideshowCrewPosition.left + (slideshowCrewPosition.width/2) > 0 && slideshowCrewPosition.top + (slideshowCrewPosition.height/2) < (window.innerHeight || document.documentElement.clientHeight) && slideshowCrewPosition.left + (slideshowCrewPosition.width/2) < (window.innerWidth || document.documentElement.clientWidth)	
+		;
+
+		return isCrewVisible;
+	}
 
 
 	function renderHTML() {
-		for (const infoSlide of infoText) {
-			infoSlide.classList.remove('slideshow__info--active');
+		const infoTextArray = Array.from(infoText);
+		const infoTextPlaces = infoTextArray.slice(0, 4);
+		const infoTextCrew = infoTextArray.slice(-4);
+		
+		const imageArray = Array.from(images);
+		const imagePlaces = imageArray.slice(0, 4);
+		const imageCrew = imageArray.slice(-4);
 
+		if(isPlacesVisible) {
+			for (const infoSlide of infoTextPlaces) {
+				infoSlide.classList.remove('slideshow__info--active');
+			}
+	
+			for (const image of imagePlaces) {
+				image.classList.remove('slideshow__image--active');
+			}
+
+		}else if(isCrewVisible){
+			for (const infoSlide of infoTextCrew) {
+				infoSlide.classList.remove('slideshow__info--active');
+			}
+	
+			for (const image of imageCrew) {
+				image.classList.remove('slideshow__image--active');
+			}
 		}
 
-		for (const image of images) {
-			image.classList.remove('slideshow__image--active');
-
-		}
-
-		infoText[currentInfoSlideIndex].scrollIntoView({
-			behaviour: 'smooth',
-			inline: 'center'
-		});
-
-		images[currentImageIndex].scrollIntoView({
-			behaviour: 'smooth',
-			inline: 'center'
-		});
-
-		infoText[currentInfoSlideIndex].classList.add('slideshow__info--active');
-		images[currentImageIndex].classList.add('slideshow__image--active');
+	
+			infoText[currentInfoSlideIndex].scrollIntoView({
+				behaviour: 'smooth',
+				inline: 'center'
+			});
+	
+			images[currentImageIndex].scrollIntoView({
+				behaviour: 'smooth',
+				inline: 'center'
+			});
+	
+			infoText[currentInfoSlideIndex].classList.add('slideshow__info--active');
+			images[currentImageIndex].classList.add('slideshow__image--active');
+		
 	}
 }
