@@ -76,6 +76,21 @@
 	transform: translateY(0);
 }
 
+.skip-to-content {
+	color: var(--white);
+	background-color: var(--red);
+	padding: 0.7em 1em;
+	position: absolute;
+	z-index: 999;
+	text-transform: uppercase;
+	transform: translate(-100%, -100%);
+	transition: transform ease-in 0.3s;
+}
+
+.skip-to-content:focus {
+	transform: translate(0, 0);
+}
+
 @media screen and (min-width: 768px) {
 	.navigation__hamburger-button {
 		display: none;

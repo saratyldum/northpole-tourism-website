@@ -28,9 +28,12 @@ export default function Hamburger() {
 		if (!menuVisible) {
 			menu.classList.remove('showMenu');
 			closeIcon.style.display = 'none';
+			hamburgerIcon.setAttribute('aria-expanded', false)
+
 		}else {
 			menu.classList.add('showMenu');
 			closeIcon.style.display = 'block'
+			hamburgerIcon.setAttribute('aria-expanded', true)
 		}
 
 		//makes menu close when menu items are clicked:

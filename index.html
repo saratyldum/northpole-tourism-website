@@ -10,10 +10,11 @@
 </head>
 
 <body>
+	<a href="#home" class="skip-to-content" >Skip to content</a>
 	<header>
 		<nav class="navigation">
 			<a href="#home"><img src="./assets/images/logo.png" alt="Home" class="logo"></a>
-			<button class="navigation__hamburger-button">
+			<button class="navigation__hamburger-button" aria-expanded="false">
 				<img src="./assets/icons/hamburger.png" alt="Open Menu">
 			</button>
 
@@ -23,16 +24,16 @@
 
 			<ul class="navigation__menu">
 				<li class="navigation__menu-item">
-					<a href="index.html#home" class="navigation__menu-link"><span class="navigation__menu-number">00</span>Home</a>
+					<a href="index.html#home" class="navigation__menu-link"><span aria-hidden="true" class="navigation__menu-number">00</span>Home</a>
 				</li>
 				<li class="navigation__menu-item">
-					<a href="#places" class="navigation__menu-link"><span class="navigation__menu-number">01</span> Places</a>
+					<a href="#places" class="navigation__menu-link"><span aria-hidden="true" class="navigation__menu-number">01</span> Places</a>
 				</li>
 				<li class="navigation__menu-item">
-					<a href="#crew" class="navigation__menu-link"><span class="navigation__menu-number">02</span> Crew</a>
+					<a href="#crew" class="navigation__menu-link"><span aria-hidden="true" class="navigation__menu-number">02</span> Crew</a>
 				</li>
 				<li class="navigation__menu-item">
-					<a href="inquires.html" class="navigation__menu-link"><span class="navigation__menu-number">03</span> Inquiries</a>
+					<a href="inquires.html" class="navigation__menu-link"><span aria-hidden="true" class="navigation__menu-number">03</span> Inquiries</a>
 				</li>
 			</ul>
 		</nav>
