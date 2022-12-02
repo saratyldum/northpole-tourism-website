@@ -11,19 +11,19 @@ export default function Wishlist() {
 	 * @TODO	rename classes that don't adhere to BEM naming system
 	 */
 
-	const alert = document.querySelector('.alert');									// too vague
-	const form = document.querySelector('.wishlist__form');
-	const wishlistInput = document.querySelector('#wishlist');							// inconsistents
-	const submitButton = document.querySelector('.wishlist__button--submit');
-	const wishlistContainer = document.querySelector('.wishlist__container');					// remove __E
+	const alertMessage = document.querySelector('.wishlist__popup-alert');								
+	const wishlistForm = document.querySelector('.wishlist__form');
+	const wishlistInput = document.querySelector('#wishlist');							
+	const submitButton = document.querySelector('.wishlist__button-submit');
+	const wishlistContainer = document.querySelector('.wishlist__container');					
 	const wishlistListContainer = document.querySelector('.wishlist__list');
-	const clearButton = document.querySelector('.wishlist__button--clear');
-	const sendButton = document.querySelector('.wishlist__button--send');
-	const flyingSanta = document.querySelector('.flying-santa');				// inconsistent
+	const clearButton = document.querySelector('.wishlist__button-clear');
+	const sendButton = document.querySelector('.wishlist__button-send');
+	const flyingSanta = document.querySelector('.wishlist__flying-santa');				// inconsistent
 	const sentMessage = document.querySelector('.wishlist__sent');
 
-	if (wishlist) {
-		form.addEventListener('submit', handleFormSubmit);
+	if (wishlistListContainer !== null) {
+		wishlistForm.addEventListener('submit', handleFormSubmit);
 		clearButton.addEventListener('click', handleClearButtonClick);
 		sendButton.addEventListener('click', handleSendButtonClick);
 	}
@@ -38,7 +38,7 @@ export default function Wishlist() {
 			editWishlistItem();
 			disableEditingMode();
 			storeWishlistLocal();
-			displayAlert('Edited wish', 'success');
+			displayAlert('Wish edited', 'success');
 		} else {
 			addNewWishlistItem();
 			storeWishlistLocal();
@@ -124,17 +124,17 @@ export default function Wishlist() {
 			<p class="title">${item.name}</p>
 
 			<div class="wishlist__button-container">
-				<button class="wishlist__button--edit">
-					<img src="./assets/icons/edit.png" class="wishlist__button--edit-img">
+				<button class="wishlist__button-edit">
+					<img src="./assets/icons/edit.png" class="wishlist__button-edit-img">
 				</button>
 				
-				<button class="wishlist__button--delete">
-					<img src="../assets/icons/trash.png" class="wishlist__button--trash-img">
+				<button class="wishlist__button-delete">
+					<img src="../assets/icons/trash.png" class="wishlist__button-trash-img">
 				</button>
 			</div>`;
 
-		const editButton = itemContainer.querySelector('.wishlist__button--edit');
-		const deleteButton = itemContainer.querySelector('.wishlist__button--delete');
+		const editButton = itemContainer.querySelector('.wishlist__button-edit');
+		const deleteButton = itemContainer.querySelector('.wishlist__button-delete');
 
 		deleteButton.addEventListener('click', handleDeleteButtonClick);
 		editButton.addEventListener('click', handleEditButtonClick);
@@ -179,12 +179,12 @@ export default function Wishlist() {
 	 * @param {string} action The 'success' or 'danger', each contected to a class with a different styling giving the alert a different color depending the action.
 	 */
 	function displayAlert(text, action) {
-		alert.textContent = text;
-		alert.classList.add(`alert-${action}`);
+		alertMessage.textContent = text;
+		alertMessage.classList.add(`wishlist__popup-alert-${action}`);
 
 		setTimeout(() => {
-			alert.textContent = '';
-			alert.classList.remove(`alert-${action}`)
+			alertMessage.textContent = '';
+			alertMessage.classList.remove(`wishlist__popup-alert-${action}`)
 		}, 2000);
 	}
 
@@ -208,7 +208,7 @@ export default function Wishlist() {
 	 */
 	function sentWishlistConfirmation() {
 		sentMessage.style.display = 'block';
-		flyingSanta.classList.add('flying-santa__animation');
+		flyingSanta.classList.add('wishlist__flying-santa-animation');
 	}
 
 	function getWishlistFromLocal() {
@@ -228,6 +228,7 @@ export default function Wishlist() {
 	function clearWishlistLocal() {
 		window.localStorage.clear(wishlistStorageName);
 	}
-
-	renderHTML();
+	if (wishlistListContainer !== null) {
+		renderHTML();
+	}
 }

@@ -2,7 +2,7 @@ export default function Hamburger() {
 	let menuVisible = false;
 
 	const menu = document.querySelector('.navigation__menu');
-	const menuItems = document.querySelectorAll('.navigation__menu--link');
+	const menuItems = document.querySelectorAll('.navigation__menu-link');
 	const hamburgerIcon = document.querySelector('.navigation__hamburger-button');
 	const closeIcon = document.querySelector('.navigation__close-button');
 	const mobileDevice = window.matchMedia('(max-width: 768px)');
@@ -32,12 +32,12 @@ export default function Hamburger() {
 			menu.classList.add('showMenu');
 			closeIcon.style.display = 'block'
 		}
-	}
 
-	//makes menu close when menu items are clicked
-	if(window.innerWidth < 768) {
-		for (let index = 0; index < menuItems.length; index +=1) {
-			menuItems[index].addEventListener('click', toggleMenu);
-		};
+		//makes menu close when menu items are clicked:
+		if(window.innerWidth < 768) {
+			for (let index = 0; index < menuItems.length; index +=1) {
+				menuItems[index].addEventListener('click', toggleMenu);
+			};
+		}
 	}
 }

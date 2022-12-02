@@ -2,8 +2,8 @@ export default function Dragdown() {
 	let clicked = false;
 	
 	const biggerDevice = window.matchMedia('(min-width: 768px)');
-	const dragdownButton = document.querySelector('.countdown__dragdown--button');
-	const dragdown = document.querySelector('.countdown__dragdown');
+	const dragdownButton = document.querySelector('.countdown-container__button');
+	const dragdown = document.querySelector('.countdown-container');
 
 	if (dragdownButton !== null) {
 		biggerDevice.addEventListener('change', handleDeviceChange);
@@ -18,30 +18,24 @@ export default function Dragdown() {
 	}
 	
 	function handleDeviceChange(biggerDevice) {
-		if(biggerDevice.matches) {
-			showCountdownBiggerScreen();
-		} else {
-			showCountdownMobile();
-		}
+		showCountdown(biggerDevice);
 	}
 
 
 	/**
-	 * Makes countdown viisble by dragging it down
+	 * Makes countdown viisble by dragging it down. Tha direction varies depending on the screen size
 	 * 
 	 */
-	function showCountdownMobile() {
-		if(clicked) {
+
+	function showCountdown(biggerDevice) {
+		if(biggerDevice.matches && clicked) {
 			dragdown.style.transform = 'translate(0, 0)';
-		}else {
-			dragdown.style.transform = 'translate(0, -100%)';		
-		}
-	}
-	function showCountdownBiggerScreen() {
-		if(clicked) {
-			dragdown.style.transform = 'translate(0, 0)';
-		}else {
+		}else if(biggerDevice.matches && !clicked) {
 			dragdown.style.transform = 'translate(100%, 0)';		
+		}else if(!biggerDevice.matches && clicked) {
+			dragdown.style.transform = 'translate(0, 0)';
+		}else if(!biggerDevice.matches && !clicked) {
+			dragdown.style.transform = 'translate(0, -100%)';		
 		}
 	}
 }

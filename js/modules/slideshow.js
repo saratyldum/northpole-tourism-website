@@ -44,29 +44,48 @@ export default function Slideshow() {
 		currentInfoSlideIndex = index + 4;
 		currentImageIndex = index + 4;
 	}
+	
 	function changeCurrentIndex(index) {
 		currentInfoSlideIndex = index;
 		currentImageIndex = index;
 	}
 
+	/**
+	 * Checks if 50% of the destination slideshow is visable
+	 * 
+	 * @returns true if more than 50% visible and false if less than 50% is visible
+	 */
 	function isPlacesInViewport() {
 		let slideshowPlacesPosition = slideshow[0].getBoundingClientRect();
 
-		isPlacesVisible = slideshowPlacesPosition.top + (slideshowPlacesPosition.height/2) > 0 && slideshowPlacesPosition.left + (slideshowPlacesPosition.width/2) > 0 && slideshowPlacesPosition.top + (slideshowPlacesPosition.height/2) < (window.innerHeight || document.documentElement.clientHeight) && slideshowPlacesPosition.left + (slideshowPlacesPosition.width/2) < (window.innerWidth || document.documentElement.clientWidth);
+		isPlacesVisible = 
+								slideshowPlacesPosition.top + (slideshowPlacesPosition.height/2) > 0 && slideshowPlacesPosition.left + (slideshowPlacesPosition.width/2) > 0 && slideshowPlacesPosition.top + (slideshowPlacesPosition.height/2) < (window.innerHeight || document.documentElement.clientHeight) && 
+								slideshowPlacesPosition.left + (slideshowPlacesPosition.width/2) < (window.innerWidth || document.documentElement.clientWidth);
 
 		return isPlacesVisible;
 	}
-
+	
+	/**
+	 * Checks if 50% of the crew slideshow is visable
+	 *
+	 * @returns true if more than 50% visible and false if less than 50% is visible
+	 */
 	function isCrewInViewport() {
 		let slideshowCrewPosition = slideshow[1].getBoundingClientRect();
 
-		isCrewVisible = slideshowCrewPosition.top + (slideshowCrewPosition.height/2) > 0 && slideshowCrewPosition.left + (slideshowCrewPosition.width/2) > 0 && slideshowCrewPosition.top + (slideshowCrewPosition.height/2) < (window.innerHeight || document.documentElement.clientHeight) && slideshowCrewPosition.left + (slideshowCrewPosition.width/2) < (window.innerWidth || document.documentElement.clientWidth)	
+		isCrewVisible = 
+							slideshowCrewPosition.top + (slideshowCrewPosition.height/2) > 0 && 
+							slideshowCrewPosition.left + (slideshowCrewPosition.width/2) > 0 && 
+							slideshowCrewPosition.top + (slideshowCrewPosition.height/2) < (window.innerHeight || document.documentElement.clientHeight) && 
+							slideshowCrewPosition.left + (slideshowCrewPosition.width/2) < (window.innerWidth || document.documentElement.clientWidth)	
 		;
 
 		return isCrewVisible;
 	}
 
-
+	/**
+	 * 
+	 */
 	function renderHTML() {
 		const infoTextArray = Array.from(infoText);
 		const infoTextPlaces = infoTextArray.slice(0, 4);
@@ -88,7 +107,7 @@ export default function Slideshow() {
 		}else if(isCrewVisible){
 			for (const infoSlide of infoTextCrew) {
 				infoSlide.classList.remove('slideshow__info--active');
-			}
+			}	
 	
 			for (const image of imageCrew) {
 				image.classList.remove('slideshow__image--active');

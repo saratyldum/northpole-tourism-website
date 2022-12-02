@@ -21,10 +21,9 @@ export default function Snow() {
 		toggleSnow();
 	}
 
-		/**
+	/**
 	 * starts and stops the snowfall when toggle button is clicked
 	 * 
-	 *@todo fiks så man kan stoppe før intervallen er ferdig
 	 */
 	 function toggleSnow() {
 		checked = !checked;
@@ -86,11 +85,8 @@ export default function Snow() {
 
   
 	  document.documentElement.style.setProperty('--y-start', y + 'px');
-	//   document.documentElement.style.setProperty('--left-start', leftStart + 'px');
 	  document.documentElement.style.setProperty('--left-end', leftEnd + 'px');
 
-
-  
 	  
 	  snow.style.width = size + 'px';
 	  snow.style.height = size + 'px';

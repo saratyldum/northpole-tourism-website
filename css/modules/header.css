@@ -59,16 +59,16 @@
 	margin-top: 0.5em;
 }
 
-.navigation__menu--link {
+.navigation__menu-link {
 	text-decoration: none;
 	color: var(--white);
 }
 
-.navigation__menu--link:hover {
+.navigation__menu-link:hover {
 	color: var(--green);
 }
 
-.navigation__menu--number {
+.navigation__menu-number {
 	display: none;
 }
 
@@ -109,13 +109,13 @@
 		display: none;
 	}
 
-	.navigation__menu--item {
+	.navigation__menu-item {
 		font-family: 'Barlow';
 		position: relative;
 		transition: 0.3s;
 	}
 
-	.navigation__menu--item:hover::after {
+	.navigation__menu-item:hover::after {
 		content: '';
 		width: 100%;
 		height: 3px;
@@ -151,7 +151,7 @@
 		height: 1px;
 	}
 
-	.navigation__menu--item:hover::after {
+	.navigation__menu-item:hover::after {
 		bottom: -1em;
 	}
 
@@ -160,7 +160,7 @@
 		height: 3.5em;
 	}
 
-	.navigation__menu--number {
+	.navigation__menu-number {
 		display: inline;
 		font-weight: bolder;
 		padding-right: 0.3em;
