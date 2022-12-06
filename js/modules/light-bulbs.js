@@ -1,4 +1,7 @@
 export default function LightBulbs() {
+	let duration;
+	let intervalChanging = false;
+
 	const checkboxContainer = document.querySelector('.light-bulb__checkbox-container');
 	const lightSwitch = document.querySelector('.light-switch');
 	const lightSwitchContainer = document.querySelector('.light-bulb__checkbox-container');
@@ -16,22 +19,38 @@ export default function LightBulbs() {
 		intervalControl.addEventListener('change', handleIntervalControlChange);
 	}
 
-	function handleCheckboxContainerClick(event) {
-		controlLightsAndIntervals(event);
+	function handleCheckboxContainerClick() {
+		intervalChanging = false;
+		renderHTML()
 	}
 
 	function handleIntervalControlChange(event) {
-		controlLightsAndIntervals(event);
+		intervalChanging = true;
+		controlLightIntervals(event);
 	}
 
-	function controlLightsAndIntervals(event) {
-		const duration = event.target.value;
+	/**
+	 * 
+	 */
+	function controlLightsOnOff() {
+		lightBulbContainer.classList.toggle('on');
+		lightSwitchState.textContent = lightSwitchLabels[lightSwitchState.textContent]	
+	}
 
+	function controlLightIntervals(event) {
+		duration = event.target.value;
+		
 		lightBulbs.forEach(lightBulb => {
 			lightBulb.style.animationDuration = `${duration}s`;
-		})
-
-		lightBulbContainer.classList.toggle('on');
-		lightSwitchState.textContent = lightSwitchLabels[lightSwitchState.textContent]
+		});
 	}
+
+	function renderHTML(event) {
+		if (!intervalChanging) {
+			controlLightsOnOff();
+		} else if(intervalChanging) {
+			controlLightIntervals(event);
+		}
+	}
+
 }
