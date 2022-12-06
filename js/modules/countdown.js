@@ -13,7 +13,6 @@ export default function Countdown() {
 		const currentTime = new Date();
 		const difference = christmasTime - currentTime;
 
-
 		const day = Math.floor(difference / 1000 / 60 / 60 / 24);
 		const hour = Math.floor(difference / 1000 / 60 / 60) % 24;
 		const minute = Math.floor(difference / 1000 / 60) % 60;
@@ -24,7 +23,8 @@ export default function Countdown() {
 		minutes.innerHTML = minute < 10 ? '0' + minute : minute;
 		seconds.innerHTML = second < 10 ? '0' + second : second;
 	}
+
 	if (days !== null) {
-		setInterval(updateCountdownTime, 1000)
+		setInterval(updateCountdownTime, 1000);
 	}
 }
