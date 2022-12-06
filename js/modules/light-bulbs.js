@@ -26,17 +26,22 @@ export default function LightBulbs() {
 
 	function handleIntervalControlChange(event) {
 		intervalChanging = true;
-		controlLightIntervals(event);
+		renderHTML(event);
 	}
 
 	/**
-	 * 
+	 * Add the 'on' class to the light bulbs and changes the text of the on/off button
 	 */
 	function controlLightsOnOff() {
 		lightBulbContainer.classList.toggle('on');
 		lightSwitchState.textContent = lightSwitchLabels[lightSwitchState.textContent]	
 	}
 
+	/**
+	 * Takes the value of the interval changer and makes that the duration time in the animation
+	 * 
+	 * @param {number} event gives us the value of the interval element
+	 */
 	function controlLightIntervals(event) {
 		duration = event.target.value;
 		
@@ -45,6 +50,11 @@ export default function LightBulbs() {
 		});
 	}
 
+	/**
+	 * The only functin that makes changes to the DOM. Runs the relevat functions depending on what is being cicked.
+	 * 
+	 * @param {number} event gives us the value of the interval element
+	 */
 	function renderHTML(event) {
 		if (!intervalChanging) {
 			controlLightsOnOff();
