@@ -20,5 +20,5 @@ In this project you will be able to:
 - JavaScript
 
 ## Links
-Github profile: https://github.com/saratyldum/
-This projects repository: https://github.com/saratyldum/northpole-tourism-website
+- Github profile: https://github.com/saratyldum/
+- This projects repository: https://github.com/saratyldum/northpole-tourism-website
