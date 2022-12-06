@@ -4,9 +4,9 @@ import Explore from './modules/explore.js';
 import Snow from './modules/snow.js';
 import Slideshow from './modules/slideshow.js';
 import Wishlist from './modules/wishlist.js';
-import Dragdown from './modules/countdownDragdown.js';
+import Dragdown from './modules/countdown-dragdown.js';
 import Countdown from './modules/countdown.js';
-import LightBulbs from './modules/lightBulbs.js';
+import LightBulbs from './modules/light-bulbs.js';
 
 
 Hamburger();
