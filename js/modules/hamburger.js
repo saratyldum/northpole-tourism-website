@@ -7,10 +7,8 @@ export default function Hamburger() {
 	const closeIcon = document.querySelector('.navigation__close-button');
 	const mobileDevice = window.matchMedia('(max-width: 768px)');
 
-
 	hamburgerIcon.addEventListener('click', handleHamburgerIconClick);
 	closeIcon.addEventListener('click', handleCloseIconClick)
-
 
 	function handleHamburgerIconClick() {
 		toggleMenu();
@@ -30,14 +28,14 @@ export default function Hamburger() {
 			closeIcon.style.display = 'none';
 			hamburgerIcon.setAttribute('aria-expanded', false)
 
-		}else {
+		} else {
 			menu.classList.add('showMenu');
 			closeIcon.style.display = 'block'
 			hamburgerIcon.setAttribute('aria-expanded', true)
 		}
 
-		//makes menu close when menu items are clicked:
-		if(window.innerWidth < 768) {
+		//makes menu close when menu items are clicked (only on mobile)
+		if (window.innerWidth < 768) {
 			for (let index = 0; index < menuItems.length; index +=1) {
 				menuItems[index].addEventListener('click', toggleMenu);
 			};
