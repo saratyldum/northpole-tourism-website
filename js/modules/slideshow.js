@@ -36,19 +36,25 @@ export default function Slideshow() {
 		changeCurrentIndexDots(index);
 		isCrewInViewport();
 		isPlacesInViewport();
-
 		renderHTML(index);
-	}
-
-	function changeCurrentIndexDots(index) {
-		currentInfoSlideIndex = index + 4;
-		currentImageIndex = index + 4;
 	}
 	
 	function changeCurrentIndex(index) {
 		currentInfoSlideIndex = index;
 		currentImageIndex = index;
 	}
+
+	/**
+	 * When the dots are being clicked we have to add 4 to the index since the first 4 elements belongs to the Places slideshow so we only target the relevant items in the Crew slideshow.
+	 * 
+	 * I am aware this is not the best way to do it and will look in to using a loop to do the same thing next time.
+	 * 
+	 * @param {number} index the index of the item in the array that is being clicked
+	 */
+		 function changeCurrentIndexDots(index) {
+			currentInfoSlideIndex = index + 4;
+			currentImageIndex = index + 4;
+		}
 
 	/**
 	 * Checks if 50% of the destination slideshow is visable
@@ -90,9 +96,14 @@ export default function Slideshow() {
 	}
 
 	/**
-	 * 
+	 * * The only function that makes changes to the DOM. Every action and change to the DOM will be handled with this function.
 	 */
 	function renderHTML() {
+		/**
+		 * Takes the full array of items and makes a two new ones, one for the crew and one for the places so that we can work with one at a time.
+		 * 
+		 * I am aware this is not the best solution and will look into using a loop for this instead next time.
+		 */
 		const infoTextArray = Array.from(infoText);
 		const infoTextPlaces = infoTextArray.slice(0, 4);
 		const infoTextCrew = infoTextArray.slice(-4);
@@ -101,6 +112,9 @@ export default function Slideshow() {
 		const imagePlaces = imageArray.slice(0, 4);
 		const imageCrew = imageArray.slice(-4);
 
+		/**
+		 * checks if the places slideshow or crew slideshow is visible and removes the active class only on the array connected to the visible slideshow.
+		 */
 		if(isPlacesVisible) {
 			for (const infoSlide of infoTextPlaces) {
 				infoSlide.classList.remove('slideshow__info--active');
@@ -119,8 +133,9 @@ export default function Slideshow() {
 			}
 		}
 	
-			infoText[currentInfoSlideIndex].classList.add('slideshow__info--active');
-			images[currentImageIndex].classList.add('slideshow__image--active');
+		//adds the active class to the index that is being clicked and viewed.
+		infoText[currentInfoSlideIndex].classList.add('slideshow__info--active');
+		images[currentImageIndex].classList.add('slideshow__image--active');
 		
 	}
 }
