@@ -279,7 +279,8 @@ export default function Wishlist() {
 	}
 
 	/**
-	 * Runs the renderHTML function to begin with in order to get any items from the local storage and create their DOM-elements if there are any items there.
+	 * Renders at least once after loading the module for the first time.
+	 * 
 	 * @see renderHTML()
 	 */
 	if (wishlistListContainer !== null) {
