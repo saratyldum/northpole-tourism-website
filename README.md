@@ -19,4 +19,6 @@ In this project you will be able to:
 - Mobile-first workflow
 - JavaScript
 
-
+## Links
+- Github profile: https://github.com/saratyldum/
+- This projects repository: https://github.com/saratyldum/northpole-tourism-website
