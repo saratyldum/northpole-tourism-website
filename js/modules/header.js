@@ -17,12 +17,15 @@ export default function Header() {
 		handleDeviceChange(smallerDevice);
 	}
 
-
-	
+	/**
+	 * Checks if screen size is smaller or bigger than the media query set and return true/false depending on outcome.
+	 * 
+	 * @param {boolean} smallerDevice shows true or false depending on if the screen size matches the min-width set.
+	 */
 	function handleDeviceChange(smallerDevice) {
-		if(smallerDevice.matches) {
+		if (smallerDevice.matches) {
 			toggleNavigationVisibility(event);
-		} 
+		}
 	}
 
 	/**
@@ -45,5 +48,4 @@ export default function Header() {
 		}
 		previousScrollPosition = scrollY;
 	}
-
 }
