@@ -53,6 +53,9 @@ export default function Slideshow() {
 	/**
 	 * Checks if 50% of the destination slideshow is visable
 	 * 
+	 * inspiration:
+	 *	https://www.javascripttutorial.net/dom/css/check-if-an-element-is-visible-in-the-viewport/
+	 *
 	 * @returns true if more than 50% visible and false if less than 50% is visible
 	 */
 	function isPlacesInViewport() {
@@ -67,6 +70,9 @@ export default function Slideshow() {
 	
 	/**
 	 * Checks if 50% of the crew slideshow is visable
+	 * 
+	 * inspiration:
+	 *	https://www.javascripttutorial.net/dom/css/check-if-an-element-is-visible-in-the-viewport/
 	 *
 	 * @returns true if more than 50% visible and false if less than 50% is visible
 	 */
@@ -103,8 +109,7 @@ export default function Slideshow() {
 			for (const image of imagePlaces) {
 				image.classList.remove('slideshow__image--active');
 			}
-
-		}else if(isCrewVisible){
+		} else if(isCrewVisible){
 			for (const infoSlide of infoTextCrew) {
 				infoSlide.classList.remove('slideshow__info--active');
 			}	
@@ -113,17 +118,6 @@ export default function Slideshow() {
 				image.classList.remove('slideshow__image--active');
 			}
 		}
-
-	
-			infoText[currentInfoSlideIndex].scrollIntoView({
-				behaviour: 'smooth',
-				inline: 'center'
-			});
-	
-			images[currentImageIndex].scrollIntoView({
-				behaviour: 'smooth',
-				inline: 'center'
-			});
 	
 			infoText[currentInfoSlideIndex].classList.add('slideshow__info--active');
 			images[currentImageIndex].classList.add('slideshow__image--active');
