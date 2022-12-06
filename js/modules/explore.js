@@ -1,8 +1,4 @@
 export default function Explore() {
-	/**
-	 * @todo MAKE IT SNOW
-	 */
-	
 	const exploreButton = document.querySelector('.hero__explore-button');
 
 	if (exploreButton !== null) {
