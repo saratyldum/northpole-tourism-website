@@ -8,7 +8,7 @@ export default function Explore() {
 	/**
 	 * Makes the site scroll down to the next page when the Explore Button is clicked
 	 * 
-	 * @param {*} event 
+	 * @param {number} event Gives the amount of pixels the viewport height is.
 	 */
 	function handleExploreButtonClick(event) {
 		let y = window.innerHeight;
