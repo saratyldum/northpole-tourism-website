@@ -23,10 +23,8 @@ export default function Dragdown() {
 
 
 	/**
-	 * Makes countdown viisble by dragging it down. Tha direction varies depending on the screen size
-	 * 
+	 * Makes countdown visble by dragging it down. The direction varies depending on the screen size
 	 */
-
 	function showCountdown(biggerDevice) {
 		if(biggerDevice.matches && clicked) {
 			dragdown.style.transform = 'translate(0, 0)';
