@@ -26,7 +26,7 @@ export default function Header() {
 	}
 
 	/**
-	 * shows navigation when user is scrolling up and hides it when scrolling down
+	 * shows navigation when user is scrolling up and hides it when scrolling down. Only happens when screen width is under 992px. On desktop the navigation has a fixed position.
 	 */
 	function toggleNavigationVisibility(event) {
 		const scrollY = window.scrollY;
