@@ -17,11 +17,9 @@
 			<button class="navigation__hamburger-button" aria-expanded="false">
 				<img src="./assets/icons/hamburger.png" alt="Open Menu">
 			</button>
-
 			<button class="navigation__close-button">
 				<img src="./assets/icons/closeIcon.png" alt="Close Menu">
 			</button>
-
 			<ul class="navigation__menu">
 				<li class="navigation__menu-item">
 					<a href="index.html#home" class="navigation__menu-link"><span aria-hidden="true" class="navigation__menu-number">00</span>Home</a>
@@ -58,7 +56,6 @@
 			<div class="light-bulb color-five"></div>
 			<div class="light-bulb color-one"></div>
 		</section>
-
 		<div class="light-bulb__settings">
 			<div class="light-bulb__group">
 				<label>Lights:</label>
@@ -67,7 +64,6 @@
 				</div>
 				<span class="light-bulb__switch--state">off</span>
 			</div>
-
 			<div class="light-bulb__group">
 				<label>Interval:</label>
 				<input 
@@ -79,8 +75,6 @@
 					max="2">
 			</div>
 		</div>
-
-		
 		<section class="wishlist" id="inquires">
 			<div class="santaBeard"></div>
 			<div class="santa__face"></div>
@@ -91,19 +85,17 @@
 				<p class="wishlist__popup-alert" role="alert"></p>
 				<h3>Wishlist</h3>
 				<div class="form-control">
-					<input type="text" id="wishlist" placeholder="E.g. lego">
+					<input type="text" id="wishlist" placeholder="E.g. lego" class="wishlist__input">
 					<button type="submit" class="wishlist__button-submit">Wish</button>
 				</div>
 			</form>
-			
 			<div class="wishlist__container">
+				<!--Each wishlist item will be made with js and added to the html as the user puts in a wish. These elements will be placed under the wishlist__list below here-->
 				<div class="wishlist__list"></div>
 				<button type="button" class="wishlist__button-clear">Clear items</button>
 				<button type="button" class="wishlist__button-send">Send Wishlist</button>
-
 			</div>
 		</section>
-
 		<div class="wishlist__flying-santa">
 			<img src="./assets/images/flyingSanta.gif" alt="">
 		</div>

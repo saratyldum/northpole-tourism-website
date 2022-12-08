@@ -1,3 +1,5 @@
+/* Using the ID to style since the classes that have been used are the same for both slideshows so one javascript module could be made for both slideshows. The ID separates the two slideshows so the styling could be made differently for each*/
+
 #crew h3 {
 	font-size: 1em;
 }
@@ -17,15 +19,13 @@
 	bottom: 0;
 	left: 0;
 	z-index: 0;
-}; 
+}
 
 #crew .slideshow__infos {
 	display: flex;
 	overflow: hidden;
 	margin: 1em auto;
 }
-
-
 
 #crew .slideshow__info {
 	display: none;
@@ -55,7 +55,6 @@
 	height: 40vh;
 	margin-top: 1em;
 }
-
 
  #crew .slideshow__dots {
 	display: flex;
@@ -101,7 +100,7 @@
 	left: 0;
 }
 
-
+/* Styling for tablet */
 @media screen and (min-width: 768px) {
 	#crew::before {
 		background-image: url(../../assets/images/medium/backgroundCrew.png);		
@@ -131,6 +130,7 @@
 		height: 45vh;
 }
 
+/* Styling for desktop */
 @media screen and (min-width: 992px) {
 	#crew {
 		display: flex;
@@ -140,6 +140,7 @@
 		background-image: url(../../assets/images/big/backgroundCrew.png);		
 	
 	}
+
 	#crew h2, #crew p {
 		text-align: left;
 		padding: 0.5em 0 0 0;

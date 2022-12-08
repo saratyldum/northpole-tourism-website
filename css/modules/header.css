@@ -91,11 +91,11 @@
 	transform: translate(0, 0);
 }
 
+/* Styling for tablet */
 @media screen and (min-width: 768px) {
 	.navigation__hamburger-button {
 		display: none;
 	}
-
 
 	.navigation {
 		top: 0;
@@ -140,13 +140,10 @@
 		bottom: -1.7em;
 		left: 0;
 	}
-
-
-
 }
 
+/* Styling for desktop */
 @media screen and (min-width: 992px) {
-
 	.navigation {
 		position: fixed;
 	}
@@ -180,7 +177,6 @@
 		font-weight: bolder;
 		padding-right: 0.3em;
 		font-size: 1em;
-
 }
 
 

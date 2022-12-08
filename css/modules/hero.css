@@ -30,6 +30,7 @@
 .hero h3 {
 	font-size: 0.9em;
 }
+
 .hero__span--the {
 	display: block;
 }
@@ -54,6 +55,7 @@
 	border: 30px solid rgba(245, 245, 245, 0.6)
 }
 
+/* Styling for tablet */
 @media screen and (min-width: 768px) {
 	.hero {
 		padding: 8em 8em
@@ -69,6 +71,7 @@
 	}
 }
 
+/* Styling for dektop */
 @media screen and (min-width: 992px) {
 	.hero {
 		display: flex;

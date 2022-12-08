@@ -104,7 +104,7 @@
 	}
 }
 
-
+/* Styling for tablet */
 @media screen and (min-width: 768px) {
 	.countdown-container {
 		height: 45vh;
@@ -147,6 +147,7 @@
 	}
 }
 
+/* Styling for desktop */
 @media screen and (min-width: 992px) {
 	.countdown-container {
 		background: transparent;
@@ -187,7 +188,8 @@
 	}
 }
 
-
+/* Some quick fixes for the dragdown countdown to not be visible in desktop.
+This way of doing it is not optimal at all but with more time i would have fixed it properly!  */
 @media screen and (min-width: 1150px) {
 	.countdown-container {
 		left: 270px;

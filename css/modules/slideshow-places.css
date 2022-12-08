@@ -1,3 +1,5 @@
+/* Using the ID to style since the classes that have been used are the same for both slideshows so one javascript module could be made for both slideshows. The ID separates the two slideshows so the styling could be made differently for each*/
+
 #places h3 {
 	font-size: 0.9em;
 }
@@ -19,7 +21,6 @@
 	left: 0;
 	z-index: 0;
 }
-
 
 #places .slideshow__infos {
 	display: flex;
@@ -124,6 +125,7 @@
 	display: none;
 }
 
+/* Styling for tablet */
 @media screen and (min-width: 768px) {
 	#places::before {
 		background-image: url(../../assets/images/medium/backgroundPlaces.png);
@@ -146,6 +148,7 @@
 	}
 }
 
+/* Styling for desktop */
 @media screen and (min-width: 992px) {
 	 #places {
 		padding-top: 8em;
@@ -230,6 +233,5 @@
 		width: 8em;
 		bottom: 9em;
 		left: 18em;
-	}
-	 
+	}	 
 }

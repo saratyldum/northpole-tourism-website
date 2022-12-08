@@ -8,7 +8,7 @@ export default function Wishlist() {
 
 	const alertMessage = document.querySelector('.wishlist__popup-alert');								
 	const wishlistSubmitButton = document.querySelector('.wishlist__form');
-	const wishlistInput = document.querySelector('#wishlist');							
+	const wishlistInput = document.querySelector('.wishlist__input');							
 	const submitButton = document.querySelector('.wishlist__button-submit');
 	const wishlistContainer = document.querySelector('.wishlist__container');					
 	const wishlistListContainer = document.querySelector('.wishlist__list');

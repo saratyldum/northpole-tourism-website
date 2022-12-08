@@ -165,6 +165,7 @@
 	border: none;
 }
 
+/* Makes the light bulbs "blink" by slowly adding more shadow around the bulb. One for each color. */
 @keyframes blinking-color-bulb-one {
 	0% {
 		box-shadow: 0 1px 10px 5px var(--color-one);
